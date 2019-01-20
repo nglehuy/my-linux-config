@@ -40,6 +40,8 @@ Plug 'mhinz/vim-signify'
 
 Plug 'lervag/vimtex'
 
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -65,8 +67,8 @@ let python_highlight_all=1
 " end nvim/vim config
 
 " start theme config
-colorscheme palenight
-let g:airline_theme='luna'
+colorscheme dracula
+let g:airline_theme='dark'
 " end theme config
 
 " start netrw config
