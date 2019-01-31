@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'                  " line on top and bottom
 
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
 
 Plug 'terryma/vim-multiple-cursors'
 
@@ -32,7 +32,7 @@ Plug 'chrisbra/csv.vim'                         " csv
 
 Plug 'othree/yajs.vim'                          " javascript syntax
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }      " js, ts autoformat
 
 Plug 'vim-scripts/indentpython.vim'
 
@@ -41,6 +41,8 @@ Plug 'mhinz/vim-signify'
 Plug 'lervag/vimtex'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'fatih/molokai'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -67,8 +69,9 @@ let python_highlight_all=1
 " end nvim/vim config
 
 " start theme config
-colorscheme dracula
-let g:airline_theme='dark'
+colorscheme gruvbox
+let g:airline_theme='badwolf'
+let g:molokai_original = 1
 " end theme config
 
 " start netrw config
@@ -136,3 +139,12 @@ EOF
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 " end ALE config
+
+:set listchars=tab:\|\ 
+:set list
+
+" Start NERDTree
+autocmd VimEnter * NERDTree
+let g:loaded_netrw       = 0
+let g:loaded_netrwPlugin = 0
+let g:netrw_menu = 0
