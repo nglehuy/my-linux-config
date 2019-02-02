@@ -44,6 +44,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'fatih/molokai'
 
+Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -99,6 +101,14 @@ set laststatus=2
 set splitright
 set splitbelow
 
+" auto closed brackets
+" inoremap ( ()<left>
+" inoremap { {}<left>
+" inoremap [ []<left>
+
+" for javascript
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 " mapping
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -148,3 +158,7 @@ autocmd VimEnter * NERDTree
 let g:loaded_netrw       = 0
 let g:loaded_netrwPlugin = 0
 let g:netrw_menu = 0
+
+" Indent line guides
+" let g:indentLine_setColors = 0
+let g:indentLine_char = '|'
