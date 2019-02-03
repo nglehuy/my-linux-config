@@ -9,6 +9,12 @@ export PMGATEWAY_MYSQL_USER="root"
 export PMGATEWAY_MYSQL_PW="root"
 export PMGATEWAY_MYSQL_URL="localhost:3306"
 export PMGATEWAY_MYSQL_DB="payment_gateway"
+# Android Studio
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
