@@ -77,20 +77,23 @@ let g:molokai_original = 1
 " end theme config
 
 " start netrw config
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_liststyle = 3
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+" let g:netrw_banner = 0
+" let g:netrw_browse_split = 4
+" let g:netrw_liststyle = 3
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
 " end netrw config
 execute pathogen#infect()
 call pathogen#helptags()
 
 " start NERDTree config
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 map <C-e> :NERDTreeToggle<CR>
+" Start NERDTree
+autocmd VimEnter * NERDTree
+let g:NERDTreeHijackNetrw = 1
 " end NERDTree config
 
 " set default indentation
@@ -152,12 +155,6 @@ let g:ale_lint_on_text_changed = 0
 
 :set listchars=tab:\|\ 
 :set list
-
-" Start NERDTree
-autocmd VimEnter * NERDTree
-let g:loaded_netrw       = 0
-let g:loaded_netrwPlugin = 0
-let g:netrw_menu = 0
 
 " Indent line guides
 " let g:indentLine_setColors = 0
