@@ -109,10 +109,12 @@ call pathogen#helptags()
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeHijackNetrw = 1
 map <C-e> :NERDTreeToggle<CR>
 " Start NERDTree
-autocmd VimEnter * NERDTree
-let g:NERDTreeHijackNetrw = 1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | q | endif
 " end NERDTree config
 
 " set default indentation
