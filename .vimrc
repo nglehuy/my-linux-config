@@ -56,6 +56,25 @@ endif
 
 call plug#end()
 
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/.vim/plugged/vundle')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/syntastic'
+
+" For indentation
+Plugin 'Yggdroot/indentLine'
+
+"All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -138,7 +157,8 @@ let g:syntastic_check_on_wq = 0
 " virtualenv
 " %{virtualenv#statusline()}
 
-"python with virtualenv support
+" python with virtualenv support
+if has('python')
 py << EOF
 import os
 import sys
@@ -147,6 +167,7 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+endif
 
 " start ALE config
 let g:ale_lint_on_save = 1
