@@ -30,7 +30,6 @@ Plug 'tpope/vim-markdown'                       " markdown
 
 Plug 'chrisbra/csv.vim'                         " csv
 
-Plug 'othree/yajs.vim'                          " javascript syntax
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }      " js, ts autoformat
 
@@ -70,6 +69,9 @@ Plugin 'scrooloose/syntastic'
 
 " For indentation
 Plugin 'Yggdroot/indentLine'
+
+" javascript syntax
+Plugin 'othree/yajs.vim'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
