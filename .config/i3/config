@@ -181,3 +181,5 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # natural scrolling touchpad
 exec_always --no-startup-id xinput 13 set-prop 13 277 1
+
+exec --no-startup-id nm-applet
