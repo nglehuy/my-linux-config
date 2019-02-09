@@ -184,3 +184,6 @@ let g:ale_lint_on_text_changed = 0
 " Indent line guides
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '|'
+
+" Vimtex
+let g:polyglot_disabled = ['latex']
