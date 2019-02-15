@@ -9,6 +9,11 @@ export PMGATEWAY_MYSQL_USER="root"
 export PMGATEWAY_MYSQL_PW="root"
 export PMGATEWAY_MYSQL_URL="localhost:3306"
 export PMGATEWAY_MYSQL_DB="payment_gateway"
+# postgre
+export TIMAT_POSTGRE_USER="lordh"
+export TIMAT_POSTGRE_PW="abc123456"
+export TIMAT_POSTGRE_URL="localhost:5432"
+export TIMAT_POSTGRE_DB="timat"
 # Android Studio
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator

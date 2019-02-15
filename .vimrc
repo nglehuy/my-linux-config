@@ -30,7 +30,6 @@ Plug 'tpope/vim-markdown'                       " markdown
 
 Plug 'chrisbra/csv.vim'                         " csv
 
-
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }      " js, ts autoformat
 
 Plug 'vim-scripts/indentpython.vim'
@@ -112,7 +111,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHijackNetrw = 1
-map <C-e> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -187,3 +186,6 @@ let g:indentLine_char = '|'
 
 " Vimtex
 let g:polyglot_disabled = ['latex']
+
+" Gitgutter
+let g:gitgutter_highlight_lines = 0

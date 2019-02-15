@@ -180,6 +180,9 @@ gaps outer 2
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # natural scrolling touchpad
-exec_always --no-startup-id xinput 13 set-prop 13 277 1
+exec --no-startup-id xinput set-prop 13 277 1
 
-exec --no-startup-id nm-applet
+# touchpad tap enable
+exec --no-startup-id xinput set-prop 13 295 1
+
+#exec --no-startup-id nm-applet
