@@ -81,6 +81,10 @@ let g:deoplete#enable_at_startup = 1
 
 " start nvim/vim config
 set number
+set showmatch
+set showcmd
+set cursorline
+highlight clear CursorLine " Removes the underline causes by enabling cursorline
 syntax on
 set bg=dark
 let g:airline_powerline_fonts = 1
@@ -111,7 +115,7 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeHijackNetrw = 1
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
