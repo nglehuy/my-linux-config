@@ -42,6 +42,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'fatih/molokai'
 
+Plug 'connorholyday/vim-snazzy'
+
 Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
 
 if has('nvim')
@@ -95,7 +97,7 @@ let python_highlight_all=1
 " end nvim/vim config
 
 " start theme config
-colorscheme gruvbox
+colorscheme snazzy
 let g:airline_theme='badwolf'
 let g:molokai_original = 1
 " end theme config
