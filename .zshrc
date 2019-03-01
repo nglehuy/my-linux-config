@@ -1,19 +1,10 @@
+export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lordh/.oh-my-zsh"
 export PATH=~/.local/bin:$PATH
-# payment_gateway
-export PMGATEWAY_MYSQL_USER="root"
-export PMGATEWAY_MYSQL_PW="root"
-export PMGATEWAY_MYSQL_URL="localhost:3306"
-export PMGATEWAY_MYSQL_DB="payment_gateway"
-# postgre
-export TIMAT_POSTGRE_USER="lordh"
-export TIMAT_POSTGRE_PW="abc123456"
-export TIMAT_POSTGRE_URL="localhost:5432"
-export TIMAT_POSTGRE_DB="timat"
 # Android Studio
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -31,7 +22,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=".."
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_first_and_last"
 POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda root_indicator background_jobs history time)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -126,3 +117,20 @@ source /home/lordh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lordh/.vimpkg/bin"
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lordh/.vimpkg/bin:/home/lordh/.vimpkg/bin"
+
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/lordh/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/lordh/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/lordh/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/lordh/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<

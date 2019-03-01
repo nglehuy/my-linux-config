@@ -4,7 +4,7 @@ Plug 'vim-airline/vim-airline'                  " line on top and bottom
 
 Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
 
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 Plug 'mattn/emmet-vim'
 
@@ -46,6 +46,22 @@ Plug 'connorholyday/vim-snazzy'
 
 Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
 
+Plug 'pangloss/vim-javascript'
+
+" Iceberg
+Plug 'cocopon/iceberg.vim'
+" Tender
+Plug 'jacoborus/tender.vim'
+
+" Hybrid
+Plug 'w0ng/vim-hybrid'
+" Badwolf
+Plug 'sjl/badwolf'
+
+Plug 'dikiaap/minimalist'
+
+Plug 'yuttie/comfortable-motion.vim'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -74,6 +90,9 @@ Plugin 'Yggdroot/indentLine'
 " javascript syntax
 Plugin 'othree/yajs.vim'
 
+" Paper theme
+Plugin 'NLKNguyen/papercolor-theme'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -91,15 +110,22 @@ syntax on
 set bg=dark
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let ayucolor="mirage"
-let g:gitgutter_highlight_lines = 1
+let ayucolor="dark"
 let python_highlight_all=1
 " end nvim/vim config
 
 " start theme config
-colorscheme snazzy
-let g:airline_theme='badwolf'
-let g:molokai_original = 1
+set termguicolors
+" color dracula
+" color lucario
+color gruvbox
+" color PaperColor
+" color molokai
+" colorscheme ayu
+" color palenight
+" color snazzy
+let g:airline_theme='base16_monokai'
+" let g:molokai_original = 1
 " end theme config
 
 " start netrw config
@@ -195,3 +221,14 @@ let g:polyglot_disabled = ['latex']
 
 " Gitgutter
 let g:gitgutter_highlight_lines = 0
+
+" Comfortable scroll
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
+
+" Background
+hi Normal guibg=NONE ctermbg=NONE
+
+" Gruvbox config
+let g:gruvbox_italic = 1
+let g:gruvbox_contrast_dark='hard'
