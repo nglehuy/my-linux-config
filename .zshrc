@@ -77,8 +77,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda root_indicator ba
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
-  virtualenv,
+  git
+  virtualenv
   virtualenvwrapper
 )
 

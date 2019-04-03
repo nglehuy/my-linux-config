@@ -62,6 +62,8 @@ Plug 'dikiaap/minimalist'
 
 Plug 'yuttie/comfortable-motion.vim'
 
+Plug 'kaicataldo/material.vim'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -93,6 +95,9 @@ Plugin 'othree/yajs.vim'
 " Paper theme
 Plugin 'NLKNguyen/papercolor-theme'
 
+" Rainbow
+Plugin 'luochen1990/rainbow'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -110,7 +115,7 @@ syntax on
 set bg=dark
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let ayucolor="dark"
+let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
 
@@ -124,7 +129,8 @@ color gruvbox
 " colorscheme ayu
 " color palenight
 " color snazzy
-let g:airline_theme='base16_monokai'
+" color material
+let g:airline_theme='deus'
 " let g:molokai_original = 1
 " end theme config
 
@@ -187,6 +193,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting=1
 " end syntastic config
 
 " virtualenv
@@ -227,8 +234,15 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Gruvbox config
 let g:gruvbox_italic = 1
 let g:gruvbox_contrast_dark='hard'
+
+" Material theme
+let g:material_theme_style = 'dark'
+let g:material_terminal_italics = 1
+
+" Rainbow
+let g:rainbow_active = 1
