@@ -98,6 +98,9 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Rainbow
 Plugin 'luochen1990/rainbow'
 
+" Clang Format
+Plugin 'rhysd/vim-clang-format'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -214,6 +217,8 @@ endif
 " start ALE config
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_python_pylint_change_directory=0
+let g:ale_python_flake8_change_directory=0
 " end ALE config
 
 :set listchars=tab:\|\ 
@@ -246,3 +251,4 @@ let g:material_terminal_italics = 1
 
 " Rainbow
 let g:rainbow_active = 1
+

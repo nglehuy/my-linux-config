@@ -4,13 +4,6 @@ export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lordh/.oh-my-zsh"
-export PATH=~/.local/bin:$PATH
-# Android Studio
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,7 +70,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda root_indicator ba
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   virtualenv
   virtualenvwrapper
 )
@@ -134,3 +126,17 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+# Open MPI
+export PATH=$PATH:/home/lordh/.openmpi/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lordh/.openmpi/lib
+export PATH=$PATH:/home/lordh/.local/bin
+# Android Studio
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
