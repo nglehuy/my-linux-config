@@ -128,7 +128,7 @@ unset __conda_setup
 # <<< conda init <<<
 # Open MPI
 export PATH=$PATH:/home/lordh/.openmpi/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lordh/.openmpi/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lordh/.openmpi/lib/
 export PATH=$PATH:/home/lordh/.local/bin
 # Android Studio
 export ANDROID_HOME=$HOME/Android/Sdk

@@ -101,6 +101,12 @@ Plugin 'luochen1990/rainbow'
 " Clang Format
 Plugin 'rhysd/vim-clang-format'
 
+" Vscode theme
+Plugin 'tomasiser/vim-code-dark'
+
+" Vim one theme
+Plugin 'rakr/vim-one'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -126,13 +132,15 @@ let python_highlight_all=1
 set termguicolors
 " color dracula
 " color lucario
-color gruvbox
+" color gruvbox
 " color PaperColor
 " color molokai
 " colorscheme ayu
 " color palenight
 " color snazzy
 " color material
+" color codedark
+color one
 let g:airline_theme='deus'
 " let g:molokai_original = 1
 " end theme config
@@ -252,3 +260,7 @@ let g:material_terminal_italics = 1
 " Rainbow
 let g:rainbow_active = 1
 
+" Prettier
+" single quotes over double quotes
+" Prettier default: false
+let g:prettier#config#single_quote = 'true'
