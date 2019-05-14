@@ -4,8 +4,6 @@ Plug 'vim-airline/vim-airline'                  " line on top and bottom
 
 Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
 
-" Plug 'terryma/vim-multiple-cursors'
-
 Plug 'mattn/emmet-vim'
 
 Plug 'airblade/vim-gitgutter'
@@ -24,10 +22,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 
 Plug 'sheerun/vim-polyglot'                     " syntax++
 
-Plug 'justinmk/vim-syntax-extra'                " c,bison,flex
-
-Plug 'tpope/vim-markdown'                       " markdown
-
 Plug 'chrisbra/csv.vim'                         " csv
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }      " js, ts autoformat
@@ -42,11 +36,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'fatih/molokai'
 
-Plug 'connorholyday/vim-snazzy'
-
 Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
-
-Plug 'pangloss/vim-javascript'
 
 " Iceberg
 Plug 'cocopon/iceberg.vim'
@@ -63,6 +53,8 @@ Plug 'dikiaap/minimalist'
 Plug 'yuttie/comfortable-motion.vim'
 
 Plug 'kaicataldo/material.vim'
+
+Plug 'phanviet/vim-monokai-pro'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -89,9 +81,6 @@ Plugin 'scrooloose/syntastic'
 " For indentation
 Plugin 'Yggdroot/indentLine'
 
-" javascript syntax
-Plugin 'othree/yajs.vim'
-
 " Paper theme
 Plugin 'NLKNguyen/papercolor-theme'
 
@@ -115,15 +104,16 @@ filetype plugin indent on    " required
 let g:deoplete#enable_at_startup = 1
 
 " start nvim/vim config
-set number
+set relativenumber
 set showmatch
 set showcmd
 set cursorline
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 syntax on
 set bg=dark
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_tab_type = 0
 let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
@@ -132,16 +122,16 @@ let python_highlight_all=1
 set termguicolors
 " color dracula
 " color lucario
-" color gruvbox
+color gruvbox
 " color PaperColor
 " color molokai
 " colorscheme ayu
 " color palenight
-" color snazzy
 " color material
 " color codedark
-color one
-let g:airline_theme='deus'
+" color one
+" color monokai_pro
+let g:airline_theme='bubblegum'
 " let g:molokai_original = 1
 " end theme config
 
@@ -227,6 +217,11 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_python_pylint_change_directory=0
 let g:ale_python_flake8_change_directory=0
+let g:ale_linters = {
+\   'python': ['flake8', 'pylint'],
+\   'javascript': ['eslint'],
+\   'vue': ['eslint']
+\}
 " end ALE config
 
 :set listchars=tab:\|\ 
@@ -247,11 +242,10 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 " Gruvbox config
 let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark='hard'
 
 " Material theme
 let g:material_theme_style = 'dark'
@@ -264,3 +258,6 @@ let g:rainbow_active = 1
 " single quotes over double quotes
 " Prettier default: false
 let g:prettier#config#single_quote = 'true'
+
+" pylint
+let g:ale_python_pylint_change_directory=0

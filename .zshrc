@@ -1,21 +1,14 @@
-export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lordh/.oh-my-zsh"
+  export ZSH="/home/lordh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-POWERLEVEL9K_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_first_and_last"
-POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda root_indicator background_jobs history time)
+ZSH_THEME="af-magic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,6 +63,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv anaconda root_indicator ba
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  git
   virtualenv
   virtualenvwrapper
 )
@@ -93,9 +87,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -106,37 +97,34 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /home/lordh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lordh/.vimpkg/bin"
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/lordh/.vimpkg/bin:/home/lordh/.vimpkg/bin"
-
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/lordh/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$('/home/lordh/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
     if [ -f "/home/lordh/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/home/lordh/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
     else
-        \export PATH="/home/lordh/anaconda3/bin:$PATH"
+        export PATH="/home/lordh/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda init <<<
-# Open MPI
-export PATH=$PATH:/home/lordh/.openmpi/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lordh/.openmpi/lib/
-export PATH=$PATH:/home/lordh/.local/bin
-# Android Studio
+# <<< conda initialize <<<
+
+# Linuxbrew
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+
+# Android
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-# Tilix
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+# hyper
+unsetopt PROMPT_SP
