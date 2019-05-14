@@ -161,6 +161,7 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
     'pane:next': 'ctrl+alt+l',
-    'pane:prev': 'ctrl+alt+h'
+    'pane:prev': 'ctrl+alt+h',
+    'pane:splitHorizontal': 'ctrl+e',
   },
 };
