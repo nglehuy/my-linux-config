@@ -31,7 +31,7 @@ module.exports = {
     letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgba(255,255,255,1)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -53,7 +53,7 @@ module.exports = {
     selectionColor: 'rgba(248,28,229,0.3)',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#444',
 
     // custom CSS to embed in the main window
     css: '',
@@ -71,7 +71,7 @@ module.exports = {
     showWindowControls: true,
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '2px 0px 0px 8px',
+    padding: '12px 0px 0px 8px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -150,7 +150,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperterm-monokai', 'hypercwd'],
+  plugins: ['hyperterm-base16-tomorrow-dark', 'hypercwd', 'hyperminimal'],
   //'hyperborder',
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -160,5 +160,7 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
+    'pane:next': 'ctrl+alt+l',
+    'pane:prev': 'ctrl+alt+h'
   },
 };
