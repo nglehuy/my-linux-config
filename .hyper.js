@@ -12,11 +12,11 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily:
-      'Dejavu Sans Mono, Hack, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+      'Monaco Nerd Font Mono, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -25,7 +25,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.0,
+    lineHeight: 1.2,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -63,7 +63,7 @@ module.exports = {
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
-    showHamburgerMenu: '',
+    showHamburgerMenu: true,
 
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
@@ -150,7 +150,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperterm-base16-tomorrow-dark', 'hypercwd', 'hyperminimal'],
+  plugins: ['hyperterm-base16-tomorrow-dark', 'hypercwd'],
   //'hyperborder',
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
