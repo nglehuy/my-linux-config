@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/lordh/.oh-my-zsh"
+export ZSH="/home/lordh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -123,12 +123,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
 
 # hyper
-unsetopt PROMPT_SP
+#unsetopt PROMPT_SP
 
 # hadoop
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
@@ -153,4 +150,8 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 
 # npm
 export PATH=~/.npm-global/bin:$PATH
+
+# Set Spaceship ZSH as a prompt
 fpath=($fpath "/home/lordh/.zfunctions")
+autoload -U promptinit; promptinit
+prompt spaceship
