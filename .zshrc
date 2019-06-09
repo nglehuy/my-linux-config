@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -114,7 +114,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Linuxbrew
-#export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
 # Android
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -124,8 +124,8 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set Spaceship ZSH as a prompt
-#autoload -U promptinit; promptinit
-#prompt spaceship
+autoload -U promptinit; promptinit
+prompt spaceship
 
 # hyper
 unsetopt PROMPT_SP
@@ -150,3 +150,7 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 #            xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $wid; done
 #fi
 ## }}}
+
+# npm
+export PATH=~/.npm-global/bin:$PATH
+fpath=($fpath "/home/lordh/.zfunctions")
