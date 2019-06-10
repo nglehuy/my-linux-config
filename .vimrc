@@ -24,7 +24,7 @@ Plug 'sheerun/vim-polyglot'                     " syntax++
 
 Plug 'chrisbra/csv.vim'                         " csv
 
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }      " js, ts autoformat
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }      " js, ts autoformat
 
 Plug 'vim-scripts/indentpython.vim'
 
@@ -95,6 +95,9 @@ Plugin 'tomasiser/vim-code-dark'
 
 " Vim one theme
 Plugin 'rakr/vim-one'
+
+" Vim auto closed tag
+Plugin 'alvan/vim-closetag'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -258,6 +261,12 @@ let g:rainbow_active = 1
 " single quotes over double quotes
 " Prettier default: false
 let g:prettier#config#single_quote = 'true'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" pylint
+"HMe pylint
 let g:ale_python_pylint_change_directory=0
+
+"auto closed tag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
