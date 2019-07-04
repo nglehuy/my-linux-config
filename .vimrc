@@ -149,9 +149,9 @@ call pathogen#helptags()
 
 " start NERDTree config
 let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
+" let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeHijackNetrw = 1
+" let NERDTreeHijackNetrw = 1
 map <C-t> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1

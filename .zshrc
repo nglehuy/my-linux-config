@@ -155,4 +155,3 @@ export PATH=~/.npm-global/bin:$PATH
 fpath=($fpath "/home/lordh/.zfunctions")
 autoload -U promptinit; promptinit
 prompt spaceship
-fpath=($fpath "/home/lordh/.zfunctions")
