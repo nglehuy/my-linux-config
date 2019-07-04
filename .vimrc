@@ -76,8 +76,6 @@ call vundle#begin('~/.vim/plugged/vundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/syntastic'
-
 " For indentation
 Plugin 'Yggdroot/indentLine'
 
@@ -117,6 +115,7 @@ set bg=dark
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#ale#enabled = 1
 let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
@@ -220,6 +219,7 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_python_pylint_change_directory=0
 let g:ale_python_flake8_change_directory=0
+let g:ale_list_window_size = 2
 let g:ale_linters = {
 \   'python': ['flake8', 'pylint'],
 \   'javascript': ['eslint'],
