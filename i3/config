@@ -7,7 +7,7 @@
 set $mod Mod4
 
 # This is the Solarized color palette.
-set $base03    #353535
+set $base03    #30323f
 set $base02    #073642
 set $base01    #586e75
 set $base00    #657b83
