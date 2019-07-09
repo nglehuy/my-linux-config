@@ -64,8 +64,6 @@ export ZSH="/home/lordh/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  virtualenv
-  virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -155,3 +153,6 @@ export PATH=~/.npm-global/bin:$PATH
 fpath=($fpath "/home/lordh/.zfunctions")
 autoload -U promptinit; promptinit
 prompt spaceship
+
+# config spaceship
+SPACESHIP_PROMPT_ADD_NEWLINE=false
