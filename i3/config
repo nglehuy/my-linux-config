@@ -52,7 +52,6 @@ floating_modifier $mod
 
 hide_edge_borders smart
 
-# start a terminal
 bindsym $mod+Return exec gnome-terminal
 
 # start a web browser
@@ -210,8 +209,11 @@ mode "Resize Mode" {
 bindsym $mod+r mode "Resize Mode"
 
 # Disable titlebar
-new_window pixel 1
-new_float pixel 1
+new_window pixel 2
+new_float pixel 2
+
+# default_border pixel 5
+# default_floating_border pixel 5
 
 # Gaps (i3-gaps)
 gaps inner 5
@@ -256,10 +258,10 @@ bar {
 # Run programs when i3 starts
 
 # Composite manager
-exec --no-startup-id compton -f --config /etc/xdg/compton.conf
+# exec --no-startup-id compton -f --config /etc/xdg/compton.conf
 
 # Launch the shortcut Conky window on first login
-exec --no-startup-id /usr/bin/regolith-ftue.sh
+# exec --no-startup-id /usr/bin/regolith-ftue.sh
 
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
