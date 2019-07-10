@@ -236,30 +236,33 @@ popup_during_fullscreen smart
 focus_follows_mouse no
 
 # Configure the bar
-bar {
-  font pango:SF Pro Display Regular 12, Hasklig Regular 13, FontAwesome 13
-  separator_symbol " | "
-  status_command i3blocks
-  tray_output none
-  strip_workspace_numbers yes
-  position top
-
-  colors {
-      background $base03
-      statusline $base1
-      separator  $blue
-#                        BORDER  BACKGROUND TEXT
-      focused_workspace  $base02  $base02  $base2
-      active_workspace   $base02  $base02  $base01
-      inactive_workspace $base03  $base03  $base01
-      urgent_workspace   $red     $red     $base3
-  }
-}
+# bar {
+#   font pango:SF Pro Display Regular 12, Hasklig Regular 13, FontAwesome 13
+#   separator_symbol " | "
+#   status_command i3blocks
+#   tray_output none
+#   strip_workspace_numbers yes
+#   position top
+# 
+#   colors {
+#       background $base03
+#       statusline $base1
+#       separator  $blue
+# #                        BORDER  BACKGROUND TEXT
+#       focused_workspace  $base02  $base02  $base2
+#       active_workspace   $base02  $base02  $base01
+#       inactive_workspace $base03  $base03  $base01
+#       urgent_workspace   $red     $red     $base3
+#   }
+# }
 
 # Run programs when i3 starts
 
 # Composite manager
-# exec --no-startup-id compton -f --config /etc/xdg/compton.conf
+exec --no-startup-id compton -f --config ~/.config/compton.conf
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Launch the shortcut Conky window on first login
 # exec --no-startup-id /usr/bin/regolith-ftue.sh
