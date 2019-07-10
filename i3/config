@@ -50,7 +50,7 @@ set $ws19  "19:<span font_desc='SF Pro Display Regular 11'>19 </span><span foreg
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-hide_edge_borders smart
+# hide_edge_borders smart
 
 bindsym $mod+Return exec gnome-terminal
 
@@ -209,18 +209,18 @@ mode "Resize Mode" {
 bindsym $mod+r mode "Resize Mode"
 
 # Disable titlebar
-new_window pixel 2
-new_float pixel 2
+# new_window pixel 2
+# new_float pixel 2
 
-# default_border pixel 5
-# default_floating_border pixel 5
+default_border pixel 1
+default_floating_border pixel 1
 
 # Gaps (i3-gaps)
 gaps inner 5
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+# smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
@@ -242,6 +242,7 @@ bar {
   status_command i3blocks
   tray_output none
   strip_workspace_numbers yes
+  position top
 
   colors {
       background $base03
