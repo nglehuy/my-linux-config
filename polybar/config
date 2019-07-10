@@ -59,7 +59,7 @@ font-4 = Emoji One:scale=10;2
 
 modules-left = bspwm i3
 modules-center = mpd
-modules-right = filesystem xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem backlight-acpi pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -187,14 +187,16 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+format-offline = 
+
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
+format = <label>  <bar>
 label = BL
 
 bar-width = 10
-bar-indicator = |
+bar-indicator = []
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
