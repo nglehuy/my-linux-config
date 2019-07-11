@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #353535
+background = #000
 background-alt = #666
 ;foreground = ${xrdb:color7:#222}
 foreground = #fff
@@ -39,29 +39,29 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 0
 line-color = #eee
 
 border-size = 0
 border-color = #00000000
 
-padding-left = 8
-padding-right = 8
+padding-left = 2
+padding-right = 4
 
 module-margin-left = 0
 module-margin-right = 8
 
 font-0 = SF Pro Display:size=12;2
-font-1 = FontAwesome:size=13;3
+font-1 = FontAwesome:size=12;3
 font-2 = unifont:fontformat=truetype:size=8:antialias=false;2
 font-3 = Siji:pixelsize=21;2
 font-4 = Emoji One:scale=10;2
 
-modules-left = powermenu date time cpu memory
-modules-center = i3
-modules-right = filesystem backlight-acpi pulseaudio wlan eth battery temperature 
+modules-left = i3 temperature cpu memory filesystem 
+modules-center = xwindow
+modules-right = backlight-acpi pulseaudio wlan eth battery date time powermenu 
 
-tray-position = center
+tray-position = right
 tray-padding = 4
 ;tray-background = #0063ff
 
@@ -105,11 +105,11 @@ interval = 25
 
 mount-0 = /
 
-label-underline = #f90000
-
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground}
+label-mounted-underline = #9FA8DA
+label-unmounted-underline = #eee
 
 [module/bspwm]
 type = internal/bspwm
@@ -267,7 +267,7 @@ format-connected-prefix = "ETHERNET: "
 format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
-format-disconnected = NO_ETHERNET
+format-disconnected = 
 ;format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -282,7 +282,7 @@ date-alt = " %Y-%m-%d"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground}
-format-underline = #673AB7
+format-underline = #4CAF50
 
 label = %date%
 
@@ -396,7 +396,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = TEMP: <label>
-format-underline = #f50a4d
+format-underline = #03A9F4
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -412,32 +412,36 @@ ramp-foreground = ${colors.foreground}
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-left= true
 
 format-spacing = 1
 
+menu-0-0 = Reboot
+menu-0-0-exec = systemctl reboot
+menu-0-0-foreground = #4CAF50
+menu-0-1 = Poweroff
+menu-0-1-exec = systemctl poweroff
+menu-0-1-foreground = #3F51B5
+menu-0-2 = Logout
+menu-0-2-exec = systemct logout
+
 ; label-open = 
-label-open =  
+label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close =  Cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+; menu-1-0 = cancel
+; menu-1-0-exec = menu-open-0
+; menu-1-1 = reboot
+; menu-1-1-exec = sudo reboot
+; 
+; menu-2-0 = power off
+; menu-2-0-exec = sudo poweroff
+; menu-2-1 = cancel
+; menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true

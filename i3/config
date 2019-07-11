@@ -216,7 +216,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 # Gaps (i3-gaps)
-gaps inner 5
+gaps inner 8
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
