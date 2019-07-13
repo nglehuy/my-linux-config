@@ -115,14 +115,17 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:80:...%
+label-empty = lordh@vostro
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+; format-prefix = " "
+format-foreground = ${colors.foreground}
+format-background = ${colors.bronze}
+format-padding = 4
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
@@ -139,7 +142,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =   %mountpoint%: %percentage_used%%
+label-mounted =   %used% / %total%
 label-mounted-foreground = ${colors.foreground}
 label-mounted-background = ${colors.grass}
 label-mounted-padding = 4
@@ -421,7 +424,9 @@ format-discharging-padding = ${self.format-charging-padding}
 format-discharging-foreground = ${colors.foreground}
 
 format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.foreground}
+format-full-foreground = ${colors.foreground}
+format-full-padding = 4
+format-full-background = ${self.format-charging-background}
 format-full-underline = ${self.format-charging-underline}
 
 ; ramp-capacity-0 = 
@@ -439,13 +444,13 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.green}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.green}
+animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -456,15 +461,18 @@ hwmon-path = /sys/devices/virtual/hwmon/hwmon2/temp1_input
 interval = 1
 
 format = <ramp>  <label>
-format-warn = <ramp> <label-warn>
+format-warn = <ramp>  <label-warn>
 format-warn-underline = ${colors.red}
 format-underline = ${colors.red}
 format-background = ${colors.sky}
 format-padding = 4
+format-warn-background = ${self.format-background}
+format-warn-padding = ${self.format-padding}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-foreground = ${colors.foreground}
+label-warn-foreground = ${colors.orange}
 
 ramp-0 = 
 ramp-1 = 
