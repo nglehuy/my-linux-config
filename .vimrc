@@ -30,7 +30,7 @@ Plug 'vim-scripts/indentpython.vim'
 
 Plug 'mhinz/vim-signify'
 
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
 
