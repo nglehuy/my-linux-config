@@ -18,19 +18,27 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #111
+background = #282a36
 background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = #fff
+foreground = #f8f8f2
 foreground-alt = #eee
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+purple = #bd93f9
+blue = #4FC3F7
+green = #50fa7b
+red = #ff5555
+yellow = #f1fa8c
+pink = #ff79c6
+cyan = #8be9fd
+orange = #ffb86c
 
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
+height = 32
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -39,7 +47,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 3
 line-color = #eee
 
 border-size = 0
@@ -53,14 +61,14 @@ module-margin-right = 8
 
 font-0 = SF Pro Display:size=12;2
 font-1 = fico:pixelsize=11;2
-font-2 = FontAwesome:size=14;2
+font-2 = FontAwesome:size=11;3
 font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 font-4 = Siji:pixelsize=21;2
 font-5 = Emoji One:scale=10;2
 
 modules-left = i3 temperature cpu memory filesystem 
 modules-center = xwindow
-modules-right = backlight-acpi pulseaudio wlan eth battery date time powermenu 
+modules-right = backlight-acpi pulseaudio wlan eth battery date powermenu 
 
 tray-position = right
 tray-padding = 4
@@ -109,8 +117,8 @@ mount-0 = /
 label-mounted =   %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground}
-label-mounted-underline = #9FA8DA
-label-unmounted-underline = #eee
+label-mounted-underline = ${colors.foreground}
+label-unmounted-underline = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
@@ -219,16 +227,16 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #f90000
+format-prefix-foreground = ${colors.yellow}
+format-underline = ${colors.yellow}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #4bffdc
+format-prefix-foreground = ${colors.blue}
+format-underline = ${colors.blue}
 label = %percentage_used%%
 
 [module/wlan]
@@ -236,8 +244,8 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected =   <label-connected>
-format-connected-underline = #9f78e1
+format-connected = <ramp-signal>  <label-connected>
+format-connected-underline = ${colors.pink}
 label-connected = %essid%
 
 format-disconnected = 
@@ -246,17 +254,17 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-; ramp-signal-0 = 
-; ramp-signal-1 = 
-; ramp-signal-2 = 
-; ramp-signal-3 = 
-; ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+; ramp-signal-0 = 
+; ramp-signal-1 = 
+; ramp-signal-2 = 
+; ramp-signal-3 = 
+; ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.pink}
 
 [module/eth]
 type = internal/network
@@ -278,27 +286,17 @@ format-disconnected-underline = ${self.format-connected-underline}
 type = internal/date
 interval = 5
 
-date = %a %d %b %Y
-date-alt = " %Y-%m-%d"
-
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #4CAF50
-
-label = %date%
-
-[module/time]
-type = internal/date
-interval = 5
+date = 
+date-alt = %a %d %b %Y
 
 time = %I:%M %p
-time-alt = %H:%M:%S
+time-alt = 
 
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground}
-format-underline = #0a6cf5
+format-prefix-foreground = ${colors.orange}
+format-underline = ${colors.orange}
 
-label = %time%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -362,13 +360,13 @@ adapter = AC
 full-at = 98
 
 format-charging = <label-charging>  <animation-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.green}
 
 format-discharging = <label-discharging>  <ramp-capacity> 
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-foreground = ${colors.green}
 format-full-underline = ${self.format-charging-underline}
 
 ; ramp-capacity-0 = 
@@ -379,20 +377,20 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-foreground = ${colors.green}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${colors.green}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground}
+animation-discharging-foreground = ${colors.green}
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -403,18 +401,18 @@ hwmon-path = /sys/devices/virtual/hwmon/hwmon2/temp1_input
 interval = 1
 
 format = <ramp>  <label>
-format-underline = #03A9F4
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format-warn-underline = ${colors.red}
+format-underline = ${colors.red}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.red}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground}
+ramp-foreground = ${colors.red}
 
 [module/powermenu]
 type = custom/menu
