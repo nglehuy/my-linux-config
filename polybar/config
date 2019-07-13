@@ -94,6 +94,7 @@ modules-center = xwindow
 modules-right = backlight-acpi pulseaudio wlan eth battery date powermenu 
 
 tray-position = right
+tray-background = ${colors.sky}
 tray-padding = 2
 
 ;wm-restack = bspwm
