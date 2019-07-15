@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'vim-airline/vim-airline'                  " line on top and bottom
+" Plug 'vim-airline/vim-airline'                  " line on top and bottom
 
-Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
+" Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
 
 Plug 'mattn/emmet-vim'
 
@@ -97,6 +97,9 @@ Plugin 'rakr/vim-one'
 " Vim auto closed tag
 Plugin 'alvan/vim-closetag'
 
+" Lightline
+Plugin 'itchyny/lightline.vim'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -112,10 +115,10 @@ set cursorline
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 syntax on
 set bg=dark
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#show_tab_nr = 1
+" let g:airline#extensions#tabline#show_tab_type = 0
+" let g:airline#extensions#ale#enabled = 1
 let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
@@ -133,7 +136,7 @@ color gruvbox
 " color codedark
 " color one
 " color monokai_pro
-let g:airline_theme='bubblegum'
+" let g:airline_theme='deus'
 " let g:molokai_original = 1
 " end theme config
 
@@ -245,7 +248,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Gruvbox config
 let g:gruvbox_italic = 1
@@ -270,3 +273,10 @@ let g:ale_python_pylint_change_directory=0
 
 "auto closed tag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
+
+" swap
+set swapfile
+set dir=~/.swap-files
+
+" lightline
+set noshowmode
