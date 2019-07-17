@@ -263,7 +263,7 @@ let g:rainbow_active = 1
 " Prettier
 " single quotes over double quotes
 " Prettier default: false
-let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'false'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
