@@ -156,5 +156,3 @@ prompt spaceship
 
 # config spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-
-export PATH="/home/lordh/.npm-global/bin:/usr/lib/jvm/java-11-openjdk-amd64//bin:/home/lordh/anaconda3/bin:/home/lordh/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/linuxbrew/.linuxbrew/bin:/home/lordh/Android/Sdk/emulator:/home/lordh/Android/Sdk/tools:/home/lordh/Android/Sdk/tools/bin:/home/lordh/Android/Sdk/platform-tools:/home/lordh/hadoop-3.2.0/sbin:/home/lordh/hadoop-3.2.0/bin:/home/lordh/.vimpkg/bin"
