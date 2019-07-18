@@ -19,12 +19,12 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ; background = #282a36
-background = #eee8d5
+background = #303030
 background-alt = #666
 ;foreground = ${xrdb:color7:#222}
 ; foreground = #f8f8f2
 foreground = #eee
-foreground-bar = #111
+foreground-bar = #eee
 foreground-alt = #111
 primary = #ffb52a
 secondary = #e60053
@@ -61,7 +61,7 @@ ceramic = #cdcdc0
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 25
+height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -74,7 +74,7 @@ line-size = 0
 line-color = #eee
 
 border-size = 0
-border-color = #00000000
+border-color = #0000000
 
 padding-left = 0
 padding-right = 0
@@ -197,10 +197,13 @@ label-focused-padding = ${module/bspwm.label-focused-padding}
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${colors.ceramic}
+label-visible-foreground = ${colors.foreground-alt}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
@@ -239,7 +242,7 @@ type = internal/xbacklight
 format = <label>  <bar>
 label =   %percentage%%
 format-background = ${colors.ceramic}
-format-foreground = ${colors.foreground-bar}
+format-foreground = ${colors.foreground-alt}
 format-padding = 4
 
 bar-width = 10
