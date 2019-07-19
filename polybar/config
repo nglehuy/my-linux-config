@@ -18,9 +18,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-; background = #282a36
-background = #262626
-background-alt = #666
+background = #000000000
+; background = #262626
+background-alt = 
+;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
 ; foreground = #f8f8f2
 foreground = #eee
@@ -65,7 +66,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground-bar}
@@ -73,8 +74,8 @@ foreground = ${colors.foreground-bar}
 line-size = 2
 line-color = #eee
 
-border-size = 0
-border-color = #0000000
+border-size = 3
+border-color = ${colors.background}
 
 padding-left = 2
 padding-right = 2
@@ -89,8 +90,8 @@ font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 font-4 = SF Pro Display:style=Bold:size=11;3
 
 modules-left = powermenu temperature cpu memory filesystem xwindow
-modules-center = i3 date
-modules-right = backlight-acpi pulseaudio wlan eth battery
+modules-center = i3
+modules-right = backlight-acpi pulseaudio wlan eth battery date
 
 tray-position = right
 ; tray-background = ${colors.sky}
@@ -196,7 +197,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-underline = ${colors.green}
 label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -209,7 +210,7 @@ label-unfocused-background = ${colors.background}
 label-visible = %index%
 label-visible-background = ${colors.background-alt}
 label-visible-foreground = ${colors.foreground}
-; label-visible-underline = ${self.label-focused-underline}
+label-visible-underline = ${colors.grass}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -244,7 +245,8 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label>  <bar>
+; format = <label>  <bar>
+format = <label>
 label =   %percentage%%
 ; format-background = ${colors.ceramic}
 format-background = ${colors.background}
@@ -296,6 +298,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal>  <label-connected>
+; format-connected = <ramp-signal>
 ; format-connected-underline = ${colors.purple}
 label-connected = %essid%
 ; format-connected-background = ${colors.fig}
@@ -326,17 +329,18 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-underline = #55aa55
+; format-connected-underline = #55aa55
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground}
-format-connected-background = ${colors.bronze}
+; format-connected-background = ${colors.bronze}
+format-connected-background = ${colors.background}
 format-connected-padding = 4
 format-connected-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected = 
 ;format-disconnected = <label-disconnected>
-format-disconnected-underline = ${self.format-connected-underline}
+;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground}
 
@@ -361,7 +365,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>  <bar-volume>
+; format-volume = <label-volume>  <bar-volume>
+format-volume = <label-volume>
 label-volume =   %percentage%%
 label-volume-foreground = ${colors.foreground}
 ; format-volume-background = ${colors.slate}

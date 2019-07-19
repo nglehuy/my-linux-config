@@ -213,24 +213,24 @@ bindsym $mod+r mode "Resize Mode"
 # new_float pixel 2
 
 # border on all windows
-for_window [class=.*] border pixel 1
+for_window [class=.*] border pixel 2
 
-default_border pixel 1
-default_floating_border pixel 1
+# default_border pixel 1
+default_floating_border pixel 2
 
 
 # Gaps (i3-gaps)
-gaps inner 0
-gaps outer 0
+gaps inner 5
+gaps outer 5
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+# smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #8be9fd #8be9fd #8be9fd #8be9fd
-client.focused_inactive #eeeeee #eeeeee #eeeeee #eeeeee
-client.unfocused        #eeeeee #eeeeee #eeeeee #eeeeee
+client.focused          #375e97 #375e97 #375e97 #375e97
+client.focused_inactive #666666 #666666 #666666 #666666
+client.unfocused        #666666 #666666 #666666 #666666
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Enable popup during fullscreen
