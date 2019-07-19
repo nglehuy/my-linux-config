@@ -191,15 +191,15 @@ mode "Resize Mode" {
         bindsym Shift+Up resize shrink height 12 px or 12 ppt
         bindsym Shift+Right resize grow width 12 px or 12 ppt
 
-        bindsym h resize shrink width 6 px or 6 ppt
-        bindsym k resize grow height 6 px or 6 ppt
-        bindsym j resize shrink height 6 px or 6 ppt
-        bindsym l resize grow width 6 px or 6 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym j resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
-        bindsym Shift+h resize shrink width 12 px or 12 ppt
-        bindsym Shift+k resize grow height 12 px or 12 ppt
-        bindsym Shift+j resize shrink height 12 px or 12 ppt
-        bindsym Shift+l resize grow width 12 px or 12 ppt
+        bindsym Shift+h resize shrink width 2 px or 2 ppt
+        bindsym Shift+k resize grow height 2 px or 2 ppt
+        bindsym Shift+j resize shrink height 2 px or 2 ppt
+        bindsym Shift+l resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -220,7 +220,7 @@ default_floating_border pixel 1
 
 
 # Gaps (i3-gaps)
-gaps inner 5
+gaps inner 0
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
