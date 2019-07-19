@@ -212,15 +212,19 @@ bindsym $mod+r mode "Resize Mode"
 # new_window pixel 2
 # new_float pixel 2
 
-default_border pixel 0
-default_floating_border pixel 0
+# border on all windows
+for_window [class=.*] border pixel 1
+
+default_border pixel 1
+default_floating_border pixel 1
+
 
 # Gaps (i3-gaps)
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-# smart_gaps on
+smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
