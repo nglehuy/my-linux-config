@@ -71,10 +71,10 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground-bar}
 
-line-size = 2
+line-size = 3
 line-color = #eee
 
-border-size = 3
+border-size = 0
 border-color = ${colors.background}
 
 padding-left = 2
