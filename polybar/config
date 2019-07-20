@@ -476,12 +476,13 @@ animation-discharging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+base-temperature = 45
+warn-temperature = 70
 hwmon-path = /sys/devices/virtual/hwmon/hwmon2/temp1_input
 interval = 1
 
-format = <ramp>  <label>
-format-warn = <ramp>  <label-warn>
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
 ; format-warn-underline = ${colors.red}
 ; format-underline = ${colors.red}
 ; format-background = ${colors.sky}
