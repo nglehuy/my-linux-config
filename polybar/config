@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #000000000
-; background = #262626
+; background = #000000000
+background = #262626
 background-alt = 
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
@@ -74,7 +74,7 @@ foreground = ${colors.foreground-bar}
 line-size = 3
 line-color = #eee
 
-border-size = 0
+border-size = 3
 border-color = ${colors.background}
 
 padding-left = 2
