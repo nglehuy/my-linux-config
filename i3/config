@@ -248,7 +248,7 @@ gaps outer 0
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #375e97 #375e97 #375e97 #375e97
+client.focused          #eeeeee #eeeeee #eeeeee #eeeeee
 client.focused_inactive #666666 #666666 #666666 #666666
 client.unfocused        #666666 #666666 #666666 #666666
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
