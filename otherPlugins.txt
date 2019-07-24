@@ -1,6 +1,0 @@
-indentLine
-nerdtree
-pathogen
-syntastic
-tagbar
-vim-autopep8
