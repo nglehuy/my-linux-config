@@ -19,7 +19,8 @@
 [colors]
 ; background = ${xrdb:color0:#dd262626}
 ; background = #000000
-background = #1d2021
+; background = #1d2021
+background = #212121
 background-alt = 
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
@@ -63,7 +64,7 @@ transparent = #000000000
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 29
+height = 27
 bottom = true
 ;offset-x = 1%
 ;offset-y = 1%
@@ -85,11 +86,11 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = SF Pro Display:style=Medium:size=11;3
-font-1 = FontAwesome:size=11;3
-font-2 = Ubuntu:size=11;2
-font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
-font-4 = SF Pro Display:style=Bold:size=11;3
+font-0 = SF Pro Display:style=Medium:size=10;2
+font-1 = FontAwesome:size=10;2
+font-2 = Ubuntu:size=10;2
+; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
+font-3 = SF Pro Display:style=Bold:size=10;2
 
 modules-left = powermenu temperature cpu memory filesystem xwindow
 modules-center = i3
@@ -118,29 +119,30 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %{T5}%title%%{T-}
-label-maxlen = 30
+label = %{T4}%title%%{T-}
+label-maxlen = 40
 label-empty = My Desktop
 format-padding = 4
 format-background = ${colors.fig}
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-; format-prefix = " "
 format-foreground = ${colors.foreground}
-format-background = ${colors.bronze}
-format-padding = 4
-format-prefix-underline = ${colors.secondary}
 
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+; [module/xkeyboard]
+; type = internal/xkeyboard
+; blacklist-0 = num lock
+; 
+; ; format-prefix = " "
+; format-foreground = ${colors.foreground}
+; format-background = ${colors.bronze}
+; format-padding = 4
+; format-prefix-underline = ${colors.secondary}
+; 
+; label-layout = %layout%
+; label-layout-underline = ${colors.secondary}
+; 
+; label-indicator-padding = 2
+; label-indicator-margin = 1
+; label-indicator-background = ${colors.secondary}
+; label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -188,6 +190,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+pin-workspaces = true
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -199,7 +202,8 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background-alt}
+; label-focused-background = ${colors.background-alt}
+; label-focused-background = ${colors.green}
 label-focused-underline = ${colors.green}
 label-focused-padding = ${self.label-mode-padding}
 
@@ -211,7 +215,8 @@ label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${colors.background-alt}
+; label-visible-background = ${colors.background-alt}
+; label-visible-background = ${colors.grass}
 label-visible-foreground = ${colors.foreground}
 label-visible-underline = ${colors.grass}
 label-visible-padding = ${self.label-focused-padding}
@@ -257,17 +262,17 @@ format-foreground = ${colors.foreground-alt}
 ; format-foreground = ${colors.foreground}
 format-padding = 4
 
-bar-width = 10
-bar-indicator = 
-; bar-indicator-foreground = ${colors.slate}
-bar-indicator-foreground = ${colors.blue}
-bar-indicator-font = 3
-bar-fill = |
-bar-fill-font = 3
-bar-fill-foreground = ${self.bar-indicator-foreground}
-bar-empty = |
-bar-empty-font = 3
-bar-empty-foreground = ${colors.foreground}
+; bar-width = 10
+; bar-indicator = 
+; ; bar-indicator-foreground = ${colors.slate}
+; bar-indicator-foreground = ${colors.blue}
+; bar-indicator-font = 3
+; bar-fill = |
+; bar-fill-font = 3
+; bar-fill-foreground = ${self.bar-indicator-foreground}
+; bar-empty = |
+; bar-empty-font = 3
+; bar-empty-foreground = ${colors.foreground}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -383,50 +388,50 @@ format-muted-background = ${self.format-volume-background}
 format-muted-padding = ${self.format-volume-padding}
 
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 3
-bar-volume-fill = |
-bar-volume-fill-font = 3
-bar-volume-empty = |
-bar-volume-empty-font = 3
-bar-volume-empty-foreground = ${colors.foreground}
+; bar-volume-width = 10
+; bar-volume-foreground-0 = #55aa55
+; bar-volume-foreground-1 = #55aa55
+; bar-volume-foreground-2 = #55aa55
+; bar-volume-foreground-3 = #55aa55
+; bar-volume-foreground-4 = #55aa55
+; bar-volume-foreground-5 = #f5a70a
+; bar-volume-foreground-6 = #ff5555
+; bar-volume-gradient = false
+; bar-volume-indicator = 
+; bar-volume-indicator-font = 3
+; bar-volume-fill = |
+; bar-volume-fill-font = 3
+; bar-volume-empty = |
+; bar-volume-empty-font = 3
+; bar-volume-empty-foreground = ${colors.foreground}
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground}
+; [module/alsa]
+; type = internal/alsa
+; 
+; format-volume = <label-volume> <bar-volume>
+; label-volume = VOL
+; label-volume-foreground = ${root.foreground}
+; 
+; format-muted-prefix = " "
+; format-muted-foreground = ${colors.foreground}
+; label-muted = sound muted
+; 
+; bar-volume-width = 10
+; bar-volume-foreground-0 = #55aa55
+; bar-volume-foreground-1 = #55aa55
+; bar-volume-foreground-2 = #55aa55
+; bar-volume-foreground-3 = #55aa55
+; bar-volume-foreground-4 = #55aa55
+; bar-volume-foreground-5 = #f5a70a
+; bar-volume-foreground-6 = #ff5555
+; bar-volume-gradient = false
+; bar-volume-indicator = |
+; bar-volume-indicator-font = 2
+; bar-volume-fill = ─
+; bar-volume-fill-font = 2
+; bar-volume-empty = ─
+; bar-volume-empty-font = 2
+; bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -453,9 +458,6 @@ format-full-padding = 4
 format-full-background = ${self.format-charging-background}
 ; format-full-underline = ${self.format-charging-underline}
 
-; ramp-capacity-0 = 
-; ramp-capacity-1 = 
-; ramp-capacity-2 = 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
