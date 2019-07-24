@@ -71,7 +71,7 @@ basil = #486824
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
+height = 29
 bottom = false
 ;offset-x = 1%
 ;offset-y = 1%
@@ -99,9 +99,9 @@ font-2 = Ubuntu:size=10;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 font-3 = SF Pro Display:style=Bold:size=10;2
 
-modules-left = powermenu temperature cpu memory filesystem xwindow
-modules-center = i3
-modules-right = backlight-acpi pulseaudio wlan eth battery date
+modules-left = i3 xwindow
+modules-center = date time
+modules-right = wlan eth alsa battery powermenu
 
 tray-position = right
 ; tray-background = ${colorful.sky}
@@ -127,8 +127,8 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %{T4}%title%%{T-}
-label-maxlen = 40
-label-empty = My Desktop
+; label-maxlen = 40
+label-empty = Coolest Desktop Ever
 format-padding = 4
 ; format-background = ${colorful.fig}
 format-background = ${colors.background}
@@ -203,16 +203,16 @@ pin-workspaces = true
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 4
+label-mode-padding = 3
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused =   %index%
 label-focused-foreground = ${colors.foreground}
-; label-focused-background = ${colors.background-alt}
+label-focused-background = #273747
 ; label-focused-underline = ${colorful.green}
-label-focused-underline = ${ayumirage.color5}
+; label-focused-underline = ${ayumirage.color5}
 label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -223,11 +223,11 @@ label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-; label-visible-background = ${colors.background-alt}
+label-visible-background = #273747
 ; label-visible-background = ${colors.grass}
 label-visible-foreground = ${colors.foreground}
 ; label-visible-underline = ${colorful.grass}
-label-visible-underline = ${ayumirage.color13}
+; label-visible-underline = ${ayumirage.color13}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -366,10 +366,22 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date-alt = %a %d %b %Y
+date = %a %d %b %Y
+
+format-prefix = "  "
+format-foreground = ${colors.foreground}
+; format-underline = ${colors.orange}
+; format-background = ${colorful.bronze}
+format-background = ${colors.background}
+format-padding = 4
+
+label = %date%
+
+[module/time]
+type = internal/date
+interval = 5
 
 time = %I:%M %p
-time-alt =
 
 format-prefix = "  "
 format-foreground = ${colors.foreground}
@@ -378,14 +390,14 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 format-padding = 4
 
-label = %date% %time%
+label = %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 ; format-volume = <label-volume>  <bar-volume>
-format-volume = <label-volume>
-label-volume =   %percentage%%
+format-volume = <ramp-volume>  <label-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
 ; format-volume-background = ${colorful.slate}
 format-volume-background = ${colors.background}
@@ -395,6 +407,10 @@ label-muted =  
 label-muted-foreground = ${colors.foreground}
 format-muted-background = ${self.format-volume-background}
 format-muted-padding = ${self.format-volume-padding}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 
 ; bar-volume-width = 10
@@ -414,9 +430,10 @@ format-muted-padding = ${self.format-volume-padding}
 ; bar-volume-empty-font = 3
 ; bar-volume-empty-foreground = ${colors.foreground}
 
-; [module/alsa]
-; type = internal/alsa
-; 
+[module/alsa]
+type = internal/alsa
+inherit = module/pulseaudio
+
 ; format-volume = <label-volume> <bar-volume>
 ; label-volume = VOL
 ; label-volume-foreground = ${root.foreground}
@@ -448,14 +465,14 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <label-charging>  <animation-charging>
+format-charging = <animation-charging>  <label-charging>
 ; format-charging-underline = ${colors.green}
 ; format-charging-background = ${colorful.basil}
 format-charging-background = ${colors.background}
 format-charging-foreground = ${colors.foreground}
 format-charging-padding = 4
 
-format-discharging = <label-discharging>  <ramp-capacity> 
+format-discharging = <ramp-capacity>  <label-discharging>
 ; format-discharging-underline = ${self.format-charging-underline}
 format-discharging-background = ${self.format-charging-background}
 format-discharging-padding = ${self.format-charging-padding}
@@ -519,7 +536,7 @@ ramp-foreground = ${colors.foreground}
 [module/powermenu]
 type = custom/menu
 
-expand-right = true
+expand-right = false
 
 format-spacing = 1
 
@@ -537,9 +554,9 @@ menu-0-2-foreground = ${colors.foreground}
 menu-0-3-foreground = ${colors.foreground}
 
 ; label-open = 
-label-open = 
+label-open =  
 label-open-foreground = ${colors.foreground}
-label-close =  Cancel
+label-close = Cancel
 label-close-foreground = ${colors.foreground}
 label-separator = |
 ; label-separator-foreground = ${colors.foreground-bar}
