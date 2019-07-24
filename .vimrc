@@ -56,6 +56,9 @@ Plug 'kaicataldo/material.vim'
 
 Plug 'phanviet/vim-monokai-pro'
 
+" Nord
+Plug 'arcticicestudio/nord-vim'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -127,10 +130,11 @@ let python_highlight_all=1
 set termguicolors
 " color dracula
 " color lucario
-color gruvbox
+" color nord
+" color gruvbox
 " color PaperColor
 " color molokai
-" colorscheme ayu
+colorscheme ayu
 " color palenight
 " color material
 " color codedark
@@ -248,7 +252,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Gruvbox config
 let g:gruvbox_italic = 1

@@ -20,18 +20,39 @@
 ; background = ${xrdb:color0:#dd262626}
 ; background = #000000
 ; background = #1d2021
-background = #212121
+background = ${ayumirage.color2}
 background-alt = 
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-; foreground = #f8f8f2
-foreground = #eee
-foreground-bar = #eee
+foreground = ${ayumirage.color5}
+; foreground = #eee
 foreground-alt = #111
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 transparent = #000000000
+
+[ayumirage]
+color1 = ffcc66
+color2 = #1f2430
+color3 = #cbccc6
+color4 = #707abc
+color5 = #5ccfe6
+color6 = #ffd580
+color7 = #73d0ff
+color8 = #bae67e
+color9 = #95e6cb
+color10 = #f28779
+color11 = #ffa759
+color12 = #ffe6b3
+color13 = #5c6773
+color14 = #d4bfff
+color15 = #f29e74
+color16 = #ff3333
+color17 = #191e2a
+color18 = #232834
+color19 = #141925
+color20 = #101521
 
 [colorful]
 slate = #626d71
@@ -51,19 +72,19 @@ basil = #486824
 monitor = ${env:MONITOR:}
 width = 100%
 height = 27
-bottom = true
+bottom = false
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
-foreground = ${colors.foreground-bar}
+foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #eee
 
-border-size = 4
+border-size = 0
 border-color = ${colors.background}
 
 padding-left = 0
@@ -83,8 +104,8 @@ modules-center = i3
 modules-right = backlight-acpi pulseaudio wlan eth battery date
 
 tray-position = right
-tray-background = ${colorful.sky}
-; tray-background = ${colors.background}
+; tray-background = ${colorful.sky}
+tray-background = ${colors.background}
 tray-padding = 2
 
 ;wm-restack = bspwm
@@ -109,7 +130,8 @@ label = %{T4}%title%%{T-}
 label-maxlen = 40
 label-empty = My Desktop
 format-padding = 4
-format-background = ${colorful.fig}
+; format-background = ${colorful.fig}
+format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
 ; [module/xkeyboard]
@@ -138,8 +160,8 @@ mount-0 = /
 
 label-mounted =   %percentage_used%%
 label-mounted-foreground = ${colors.foreground}
-label-mounted-background = ${colorful.grass}
-; label-mounted-background = ${colors.background}
+; label-mounted-background = ${colorful.grass}
+label-mounted-background = ${colors.background}
 label-mounted-padding = 4
 ; label-mounted-underline = ${colors.foreground}
 label-unmounted = %mountpoint% not mounted
@@ -189,8 +211,8 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-foreground = ${colors.foreground}
 ; label-focused-background = ${colors.background-alt}
-; label-focused-background = ${colors.green}
-label-focused-underline = ${colorful.green}
+; label-focused-underline = ${colorful.green}
+label-focused-underline = ${ayumirage.color5}
 label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
@@ -204,7 +226,8 @@ label-visible = %index%
 ; label-visible-background = ${colors.background-alt}
 ; label-visible-background = ${colors.grass}
 label-visible-foreground = ${colors.foreground}
-label-visible-underline = ${colorful.grass}
+; label-visible-underline = ${colorful.grass}
+label-visible-underline = ${ayumirage.color13}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -242,10 +265,10 @@ type = internal/xbacklight
 ; format = <label>  <bar>
 format = <label>
 label =   %percentage%%
-format-background = ${colorful.ceramic}
-; format-background = ${colors.background}
-format-foreground = ${colors.foreground-alt}
-; format-foreground = ${colors.foreground}
+; format-background = ${colorful.ceramic}
+format-background = ${colors.background}
+; format-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
 format-padding = 4
 
 ; bar-width = 10
@@ -270,8 +293,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-foreground = ${colors.foreground}
-format-background = ${colorful.apple-red}
-; format-background = ${colors.background}
+; format-background = ${colorful.apple-red}
+format-background = ${colors.background}
 format-padding = 4
 label = %percentage:2%%
 
@@ -282,8 +305,8 @@ format-prefix = "  "
 format-foreground = ${colors.foreground}
 ; format-foreground = ${colors.foreground-alt}
 ; format-underline = ${colors.blue}
-format-background = ${colorful.orange}
-; format-background = ${colors.background}
+; format-background = ${colorful.orange}
+format-background = ${colors.background}
 format-padding = 4
 label = %percentage_used%%
 
@@ -296,8 +319,8 @@ format-connected = <ramp-signal>  <label-connected>
 ; format-connected = <ramp-signal>
 ; format-connected-underline = ${colors.purple}
 label-connected = %essid%
-format-connected-background = ${colorful.fig}
-; format-connected-background = ${colors.background}
+; format-connected-background = ${colorful.fig}
+format-connected-background = ${colors.background}
 label-connected-foreground = ${colors.foreground}
 format-connected-padding = 4
 
@@ -327,8 +350,8 @@ interval = 3.0
 ; format-connected-underline = #55aa55
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground}
-format-connected-background = ${colorful.apple-red}
-; format-connected-background = ${colors.background}
+; format-connected-background = ${colorful.apple-red}
+format-connected-background = ${colors.background}
 format-connected-padding = 4
 format-connected-foreground = ${colors.foreground}
 label-connected = %local_ip%
@@ -351,8 +374,8 @@ time-alt =
 format-prefix = "  "
 format-foreground = ${colors.foreground}
 ; format-underline = ${colors.orange}
-format-background = ${colorful.bronze}
-; format-background = ${colors.background}
+; format-background = ${colorful.bronze}
+format-background = ${colors.background}
 format-padding = 4
 
 label = %date% %time%
@@ -364,8 +387,8 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume =   %percentage%%
 label-volume-foreground = ${colors.foreground}
-format-volume-background = ${colorful.slate}
-; format-volume-background = ${colors.background}
+; format-volume-background = ${colorful.slate}
+format-volume-background = ${colors.background}
 format-volume-padding = 4
 
 label-muted =  
@@ -427,8 +450,8 @@ full-at = 98
 
 format-charging = <label-charging>  <animation-charging>
 ; format-charging-underline = ${colors.green}
-format-charging-background = ${colorful.basil}
-; format-charging-background = ${colors.background}
+; format-charging-background = ${colorful.basil}
+format-charging-background = ${colors.background}
 format-charging-foreground = ${colors.foreground}
 format-charging-padding = 4
 
@@ -477,8 +500,8 @@ format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 ; format-warn-underline = ${colors.red}
 ; format-underline = ${colors.red}
-format-background = ${colorful.sky}
-; format-background = ${colors.background}
+; format-background = ${colorful.sky}
+format-background = ${colors.background}
 format-padding = 4
 format-warn-background = ${self.format-background}
 format-warn-padding = ${self.format-padding}
@@ -521,8 +544,8 @@ label-close-foreground = ${colors.foreground}
 label-separator = |
 ; label-separator-foreground = ${colors.foreground-bar}
 label-separator-foreground = ${colorful.apple-red}
-format-background = ${colorful.brown}
-; format-background = ${colors.background}
+; format-background = ${colorful.brown}
+format-background = ${colors.background}
 format-padding = 4
 
 ; menu-1-0 = cancel
