@@ -1,5 +1,3 @@
-# i3 config file (v4) for Regolith Desktop Environment
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # This defines which key super maps to on your keyboard.  
@@ -7,24 +5,24 @@
 set $mod Mod4
 
 # This is the Solarized color palette.
-set $base03    #30323f
-set $base02    #073642
-set $base01    #586e75
-set $base00    #657b83
-set $base0     #839496
-set $base1     #93a1a1
-set $base2     #eee8d5
-set $base3     #fdf6e3
-set $yellow    #b58900
-set $orange    #cb4b10
-set $red       #dc322f
-set $magenta   #d33682
-set $violet    #6c71c4
-set $blue      #268bd2
-set $cyan      #2aa198
-set $green     #859900
-set $transparent #00000000
-set $lucent    #00000088
+# set $base03    #30323f
+# set $base02    #073642
+# set $base01    #586e75
+# set $base00    #657b83
+# set $base0     #839496
+# set $base1     #93a1a1
+# set $base2     #eee8d5
+# set $base3     #fdf6e3
+# set $yellow    #b58900
+# set $orange    #cb4b10
+# set $red       #dc322f
+# set $magenta   #d33682
+# set $violet    #6c71c4
+# set $blue      #268bd2
+# set $cyan      #2aa198
+# set $green     #859900
+# set $transparent #00000000
+# set $lucent    #00000088
 
 # This is the labels which describe each i3 workspace.
 set $ws1   "1:<span font_desc='SF Pro Display Regular 11'> 1 </span><span foreground='#268bd2'></span> "
@@ -98,7 +96,7 @@ bindsym $mod+minus gaps inner current minus 6
 bindsym $mod+plus gaps inner current plus 6
 
 # show/hide keybindings
-bindsym $mod+Shift+question exec --no-startup-id /usr/bin/conky-toggle.sh
+# bindsym $mod+Shift+question exec --no-startup-id /usr/bin/conky-toggle.sh
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -213,15 +211,18 @@ bindsym $mod+r mode "Resize Mode"
 # new_float pixel 2
 
 # border on all windows
-for_window [class=.*] border none
+for_window [class=.*] border pixel 2
 
 # default_border pixel 1
-default_floating_border none
+default_floating_border pixel 2
 
+# Enable floating on specific windows
+for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
+for_window [class="Nautilus" instance="nautilus"] floating enable
 
 # Gaps (i3-gaps)
-gaps inner 10
-gaps outer 0
+gaps inner 5
+gaps outer 5
 
 # Only enable gaps on a workspace when there is at least one container
 # smart_gaps on
@@ -229,8 +230,8 @@ gaps outer 0
 # Window Border color
 # class                 border  backgr. text    indicator child_border
 client.focused          #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
-client.focused_inactive #666666 #666666 #666666 #666666
-client.unfocused        #666666 #666666 #666666 #666666
+client.focused_inactive #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
+client.unfocused        #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Enable popup during fullscreen
@@ -263,7 +264,7 @@ focus_follows_mouse no
 # Run programs when i3 starts
 
 # Composite manager
-exec --no-startup-id compton -f --config ~/.config/compton.conf
+# exec --no-startup-id compton -f --config ~/.config/compton.conf
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

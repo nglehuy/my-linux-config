@@ -103,6 +103,10 @@ Plugin 'alvan/vim-closetag'
 " Lightline
 Plugin 'itchyny/lightline.vim'
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -284,3 +288,9 @@ set dir=~/.swap-files
 
 " lightline
 set noshowmode
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_json_frontmatter = 1
+
