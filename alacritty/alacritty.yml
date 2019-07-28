@@ -175,7 +175,7 @@ colors:
   # Default colors
   primary:
     background: '0x1f2430'
-    foreground: '0x5ccfe6'
+    foreground: '0xbbbbbb'
 
     # Bright and dim foreground colors
     #

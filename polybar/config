@@ -18,13 +18,12 @@
 
 [colors]
 ; background = ${xrdb:color0:#dd262626}
-; background = #000000
 ; background = #1d2021
-background = ${ayumirage.color2}
+background = ${cyberdark.color1}
 background-alt = 
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = ${ayumirage.color5}
+foreground = ${cyberdark.color2}
 ; foreground = #eee
 foreground-alt = #111
 primary = #ffb52a
@@ -32,27 +31,14 @@ secondary = #e60053
 alert = #bd2c40
 transparent = #000000000
 
-[ayumirage]
-color1 = ffcc66
-color2 = #1f2430
-color3 = #cbccc6
-color4 = #707abc
-color5 = #5ccfe6
-color6 = #ffd580
-color7 = #73d0ff
-color8 = #bae67e
-color9 = #95e6cb
-color10 = #f28779
-color11 = #ffa759
-color12 = #ffe6b3
-color13 = #5c6773
-color14 = #d4bfff
-color15 = #f29e74
-color16 = #ff3333
-color17 = #191e2a
-color18 = #232834
-color19 = #141925
-color20 = #101521
+[general]
+padding = 3
+
+[cyberdark]
+color1 = #1f2430
+color2 = #bbbbbb
+color3 = #5ccfe6
+color4 = #273747
 
 [colorful]
 slate = #626d71
@@ -76,7 +62,7 @@ bottom = false
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
-fixed-center = true
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -84,34 +70,34 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #eee
 
-border-size = 0
-border-color = ${ayumirage.color5}
+border-size = 2
+border-color = ${cyberdark.color1}
 
 padding-left = 0
-padding-right = 1
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = SF Pro Display:style=Medium:size=10;2
-font-1 = FontAwesome:size=10;2
-font-2 = Ubuntu:size=10;2
+font-0 = Roboto Condensed:style=Regular:size=11;2
+font-1 = FontAwesome:size=11;2
+; font-2 = Ubuntu:style=Bold:size=10;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
-font-3 = SF Pro Display:style=Bold:size=10;2
+; font-3 = SF Pro Display:style=Bold:size=10;2
 
 modules-left = i3 xwindow
-modules-center = date time
-modules-right = wlan eth alsa battery powermenu
+modules-center =
+modules-right = wlan eth alsa battery memory cpu temperature backlight-acpi filesystem date time powermenu
 
 tray-position = right
 ; tray-background = ${colorful.sky}
-tray-background = ${colors.background}
+tray-background = ${cyberdark.color1}
 tray-padding = 2
 
-;wm-restack = bspwm
-;wm-restack = i3
+; override-redirect = true
 
-;override-redirect = true
+;wm-restack = bspwm
+; wm-restack = i3
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -119,20 +105,20 @@ tray-padding = 2
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
-separator = " "
+separator = 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %{T4}%title%%{T-}
-; label-maxlen = 40
+label = %title%
+label-maxlen = 90
 label-empty = Coolest Desktop Ever
-format-padding = 4
+format-padding = ${general.padding}
 ; format-background = ${colorful.fig}
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
+format-background = ${cyberdark.color1}
+format-foreground = ${cyberdark.color2}
 
 ; [module/xkeyboard]
 ; type = internal/xkeyboard
@@ -158,17 +144,20 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =   %percentage_used%%
-label-mounted-foreground = ${colors.foreground}
+format-mounted-prefix = "  "
+format-mounted-prefix-foreground = ${cyberdark.color3}
+label-mounted = %percentage_used%%
+label-mounted-foreground = ${cyberdark.color2}
 ; label-mounted-background = ${colorful.grass}
-label-mounted-background = ${colors.background}
-label-mounted-padding = 4
+label-mounted-background = ${cyberdark.color1}
+format-mounted-padding = ${general.padding}
 ; label-mounted-underline = ${colors.foreground}
+format-unmounted-prefix = 
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground}
+label-unmounted-foreground = ${cyberdark.color2}
 ; label-unmounted-underline = ${colors.foreground}
 label-unmounted-background = ${self.label-mounted-background}
-label-unmounted-padding = ${self.label-mounted-padding}
+format-unmounted-padding = ${self.format-mounted-padding}
 
 
 ; [module/bspwm]
@@ -198,37 +187,36 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-pin-workspaces = true
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
-label-mode-padding = 3
+label-mode-padding = ${general.padding}
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused =   %index%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = #273747
+label-focused-foreground = ${cyberdark.color3}
+label-focused-background = ${cyberdark.color4}
 ; label-focused-underline = ${colorful.green}
-; label-focused-underline = ${ayumirage.color5}
+; label-focused-underline = ${cyberdark.color1}
 label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = ${self.label-focused-padding}
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${cyberdark.color3}
 label-unfocused-background = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = #273747
+label-visible-background = ${cyberdark.color4}
 ; label-visible-background = ${colors.grass}
-label-visible-foreground = ${colors.foreground}
+label-visible-foreground = ${cyberdark.color3}
 ; label-visible-underline = ${colorful.grass}
-; label-visible-underline = ${ayumirage.color13}
-label-visible-padding = ${self.label-focused-padding}
+; label-visible-underline = ${cyberdark.color13}
+format-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
@@ -264,12 +252,14 @@ type = internal/xbacklight
 
 ; format = <label>  <bar>
 format = <label>
-label =   %percentage%%
+format-prefix = "  "
+format-prefix-foreground = ${cyberdark.color3}
+label = %percentage%%
 ; format-background = ${colorful.ceramic}
-format-background = ${colors.background}
+format-background = ${cyberdark.color1}
 ; format-foreground = ${colors.foreground-alt}
-format-foreground = ${colors.foreground}
-format-padding = 4
+format-foreground = ${cyberdark.color2}
+format-padding = ${general.padding}
 
 ; bar-width = 10
 ; bar-indicator = 
@@ -292,23 +282,25 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-foreground = ${colors.foreground}
+format-prefix-foreground = ${cyberdark.color3}
 ; format-background = ${colorful.apple-red}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 label = %percentage:2%%
+label-foreground = ${cyberdark.color2}
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = "  "
-format-foreground = ${colors.foreground}
+format-prefix-foreground = ${cyberdark.color3}
 ; format-foreground = ${colors.foreground-alt}
 ; format-underline = ${colors.blue}
 ; format-background = ${colorful.orange}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 label = %percentage_used%%
+label-foreground = ${cyberdark.color2}
 
 [module/wlan]
 type = internal/network
@@ -320,9 +312,9 @@ format-connected = <ramp-signal>  <label-connected>
 ; format-connected-underline = ${colors.purple}
 label-connected = %essid%
 ; format-connected-background = ${colorful.fig}
-format-connected-background = ${colors.background}
-label-connected-foreground = ${colors.foreground}
-format-connected-padding = 4
+format-connected-background = ${cyberdark.color1}
+label-connected-foreground = ${cyberdark.color2}
+format-connected-padding = ${general.padding}
 
 format-disconnected = 
 ;format-disconnected = <label-disconnected>
@@ -340,7 +332,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
+ramp-signal-foreground = ${cyberdark.color3}
 
 [module/eth]
 type = internal/network
@@ -349,11 +341,11 @@ interval = 3.0
 
 ; format-connected-underline = #55aa55
 format-connected-prefix = "  "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-prefix-foreground = ${cyberdark.color3}
 ; format-connected-background = ${colorful.apple-red}
-format-connected-background = ${colors.background}
-format-connected-padding = 4
-format-connected-foreground = ${colors.foreground}
+format-connected-background = ${cyberdark.color1}
+format-connected-padding = ${general.padding}
+format-connected-foreground = ${cyberdark.color2}
 label-connected = %local_ip%
 
 format-disconnected = 
@@ -369,13 +361,14 @@ interval = 5
 date = %a %d %b %Y
 
 format-prefix = "  "
-format-foreground = ${colors.foreground}
+format-prefix-foreground = ${cyberdark.color3}
 ; format-underline = ${colors.orange}
 ; format-background = ${colorful.bronze}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 
 label = %date%
+label-foreground = ${cyberdark.color2}
 
 [module/time]
 type = internal/date
@@ -384,13 +377,14 @@ interval = 5
 time = %I:%M %p
 
 format-prefix = "  "
-format-foreground = ${colors.foreground}
+format-prefix-foreground = ${cyberdark.color3}
 ; format-underline = ${colors.orange}
 ; format-background = ${colorful.bronze}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 
 label = %time%
+label-foreground = ${cyberdark.color2}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -398,19 +392,20 @@ type = internal/pulseaudio
 ; format-volume = <label-volume>  <bar-volume>
 format-volume = <ramp-volume>  <label-volume>
 label-volume = %percentage%%
-label-volume-foreground = ${colors.foreground}
+label-volume-foreground = ${cyberdark.color2}
 ; format-volume-background = ${colorful.slate}
-format-volume-background = ${colors.background}
-format-volume-padding = 4
+format-volume-background = ${cyberdark.color1}
+format-volume-padding = ${general.padding}
 
 label-muted =  
-label-muted-foreground = ${colors.foreground}
+label-muted-foreground = ${cyberdark.color3}
 format-muted-background = ${self.format-volume-background}
 format-muted-padding = ${self.format-volume-padding}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
+ramp-volume-foreground = ${cyberdark.color3}
 
 
 ; bar-volume-width = 10
@@ -468,9 +463,9 @@ full-at = 98
 format-charging = <animation-charging>  <label-charging>
 ; format-charging-underline = ${colors.green}
 ; format-charging-background = ${colorful.basil}
-format-charging-background = ${colors.background}
-format-charging-foreground = ${colors.foreground}
-format-charging-padding = 4
+format-charging-background = ${cyberdark.color1}
+format-charging-foreground = ${cyberdark.color2}
+format-charging-padding = ${general.padding}
 
 format-discharging = <ramp-capacity>  <label-discharging>
 ; format-discharging-underline = ${self.format-charging-underline}
@@ -479,8 +474,9 @@ format-discharging-padding = ${self.format-charging-padding}
 format-discharging-foreground = ${colors.foreground}
 
 format-full-prefix = "  "
-format-full-foreground = ${colors.foreground}
-format-full-padding = 4
+format-full-prefix-foreground = ${cyberdark.color3}
+format-full-foreground = ${cyberdark.color2}
+format-full-padding = ${general.padding}
 format-full-background = ${self.format-charging-background}
 ; format-full-underline = ${self.format-charging-underline}
 
@@ -489,20 +485,20 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-foreground = ${cyberdark.color3}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${cyberdark.color3}
 animation-charging-framerate = 750
 
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground}
+animation-discharging-foreground = ${cyberdark.color3}
 animation-discharging-framerate = 750
 
 [module/temperature]
@@ -513,25 +509,25 @@ warn-temperature = 70
 hwmon-path = /sys/devices/virtual/hwmon/hwmon2/temp1_input
 interval = 1
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+format = <ramp>  <label>
+format-warn = <ramp>  <label-warn>
 ; format-warn-underline = ${colors.red}
 ; format-underline = ${colors.red}
 ; format-background = ${colorful.sky}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 format-warn-background = ${self.format-background}
 format-warn-padding = ${self.format-padding}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-foreground = ${colors.foreground}
-label-warn-foreground = ${colorful.orange}
+label-foreground = ${cyberdark.color2}
+label-warn-foreground = ${colorful.apple-red}
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = ${colors.foreground}
+ramp-foreground = ${cyberdark.color3}
 
 [module/powermenu]
 type = custom/menu
@@ -548,22 +544,22 @@ menu-0-2 = Poweroff
 menu-0-2-exec = systemctl poweroff
 menu-0-3 = Logout
 menu-0-3-exec = i3-msg exit
-menu-0-0-foreground = ${colors.foreground}
-menu-0-1-foreground = ${colors.foreground}
-menu-0-2-foreground = ${colors.foreground}
-menu-0-3-foreground = ${colors.foreground}
+menu-0-0-foreground = ${cyberdark.color2}
+menu-0-1-foreground = ${cyberdark.color2}
+menu-0-2-foreground = ${cyberdark.color2}
+menu-0-3-foreground = ${cyberdark.color2}
 
 ; label-open = 
 label-open =  
-label-open-foreground = ${colors.foreground}
+label-open-foreground = ${cyberdark.color3}
 label-close = Cancel
-label-close-foreground = ${colors.foreground}
+label-close-foreground = ${cyberdark.color2}
 label-separator = |
 ; label-separator-foreground = ${colors.foreground-bar}
-label-separator-foreground = ${colorful.apple-red}
+label-separator-foreground = ${cyberdark.color3}
 ; format-background = ${colorful.brown}
-format-background = ${colors.background}
-format-padding = 4
+format-background = ${cyberdark.color1}
+format-padding = ${general.padding}
 
 ; menu-1-0 = cancel
 ; menu-1-0-exec = menu-open-0

@@ -221,11 +221,11 @@ for_window [class="Gnome-control-center" instance="gnome-control-center"] floati
 for_window [class="Nautilus" instance="nautilus"] floating enable
 
 # Gaps (i3-gaps)
-gaps inner 5
-gaps outer 5
+gaps inner 10
+gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-# smart_gaps on
+smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
