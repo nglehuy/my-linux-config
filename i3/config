@@ -59,9 +59,9 @@ bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
 bindsym $mod+Shift+q kill
 
 # rofi app and window launchers
-bindsym $mod+space exec rofi -show drun -theme regolith-theme
-bindsym $mod+Shift+space exec rofi -show run -theme regolith-theme
-bindsym $mod+Ctrl+space exec rofi -show window -theme regolith-theme
+bindsym $mod+space exec rofi -show drun
+bindsym $mod+Shift+space exec rofi -show run
+bindsym $mod+Ctrl+space exec rofi -show window
 
 # change focus
 bindsym $mod+Left focus left
@@ -211,10 +211,10 @@ bindsym $mod+r mode "Resize Mode"
 # new_float pixel 2
 
 # border on all windows
-for_window [class=.*] border pixel 2
+for_window [class=.*] border pixel 1
 
 # default_border pixel 1
-default_floating_border pixel 2
+default_floating_border pixel 1
 
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
@@ -229,9 +229,9 @@ smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
-client.focused_inactive #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
-client.unfocused        #5ccfe6 #5ccfe6 #5ccfe6 #5ccfe6
+client.focused          #282828 #282828 #282828 #282828
+client.focused_inactive #282828 #282828 #282828 #282828
+client.unfocused        #282828 #282828 #282828 #282828
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Enable popup during fullscreen
@@ -264,7 +264,7 @@ focus_follows_mouse no
 # Run programs when i3 starts
 
 # Composite manager
-# exec --no-startup-id compton -f --config ~/.config/compton.conf
+exec --no-startup-id compton -f --config ~/.config/compton.conf
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

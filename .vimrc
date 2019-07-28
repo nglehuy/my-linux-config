@@ -135,10 +135,10 @@ set termguicolors
 " color dracula
 " color lucario
 " color nord
-" color gruvbox
+color gruvbox
 " color PaperColor
 " color molokai
-colorscheme ayu
+" colorscheme ayu
 " color palenight
 " color material
 " color codedark

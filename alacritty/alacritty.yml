@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 4
-    y: 4
+    x: 8
+    y: 8
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -174,8 +174,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x1f2430'
-    foreground: '0xbbbbbb'
+    background: '0x282828'
+    foreground: '0xebdbb2'
 
     # Bright and dim foreground colors
     #
