@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-" Plug 'vim-airline/vim-airline'                  " line on top and bottom
+Plug 'vim-airline/vim-airline'                  " line on top and bottom
 
-" Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
+Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
 
 Plug 'mattn/emmet-vim'
 
@@ -18,8 +18,6 @@ Plug 'morhetz/gruvbox'
 
 Plug 'ayu-theme/ayu-vim'
 
-Plug 'drewtempelmeyer/palenight.vim'
-
 Plug 'sheerun/vim-polyglot'                     " syntax++
 
 Plug 'chrisbra/csv.vim'                         " csv
@@ -30,34 +28,9 @@ Plug 'vim-scripts/indentpython.vim'
 
 Plug 'mhinz/vim-signify'
 
-" Plug 'lervag/vimtex'
-
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-Plug 'fatih/molokai'
-
 Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
 
-" Iceberg
-Plug 'cocopon/iceberg.vim'
-" Tender
-Plug 'jacoborus/tender.vim'
-
-" Hybrid
-Plug 'w0ng/vim-hybrid'
-" Badwolf
-Plug 'sjl/badwolf'
-
-Plug 'dikiaap/minimalist'
-
 Plug 'yuttie/comfortable-motion.vim'
-
-Plug 'kaicataldo/material.vim'
-
-Plug 'phanviet/vim-monokai-pro'
-
-" Nord
-Plug 'arcticicestudio/nord-vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -82,26 +55,17 @@ Plugin 'VundleVim/Vundle.vim'
 " For indentation
 Plugin 'Yggdroot/indentLine'
 
-" Paper theme
-Plugin 'NLKNguyen/papercolor-theme'
-
 " Rainbow
 Plugin 'luochen1990/rainbow'
 
 " Clang Format
 Plugin 'rhysd/vim-clang-format'
 
-" Vscode theme
-Plugin 'tomasiser/vim-code-dark'
-
-" Vim one theme
-Plugin 'rakr/vim-one'
-
 " Vim auto closed tag
 Plugin 'alvan/vim-closetag'
 
-" Lightline
-Plugin 'itchyny/lightline.vim'
+" NerdTree
+Plugin 'scrooloose/nerdtree'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -122,10 +86,10 @@ set cursorline
 highlight clear CursorLine " Removes the underline causes by enabling cursorline
 syntax on
 set bg=dark
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#show_tab_nr = 1
-" let g:airline#extensions#tabline#show_tab_type = 0
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#ale#enabled = 1
 let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
@@ -139,11 +103,6 @@ color gruvbox
 " color PaperColor
 " color molokai
 " colorscheme ayu
-" color palenight
-" color material
-" color codedark
-" color one
-" color monokai_pro
 " let g:airline_theme='deus'
 " let g:molokai_original = 1
 " end theme config
@@ -162,12 +121,12 @@ call pathogen#helptags()
 let NERDTreeShowHidden = 1
 " let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-" let NERDTreeHijackNetrw = 1
+let NERDTreeHijackNetrw = 1
 map <C-t> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | q | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 " end NERDTree config
 
 " set default indentation
@@ -177,11 +136,6 @@ set expandtab
 set laststatus=2
 set splitright
 set splitbelow
-
-" auto closed brackets
-" inoremap ( ()<left>
-" inoremap { {}<left>
-" inoremap [ []<left>
 
 " for javascript
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -199,15 +153,15 @@ au BufNewFile,BufRead *.py
 set encoding=utf-8
 
 " start syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_highlighting=1
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_highlighting=1
 " end syntastic config
 
 " virtualenv
@@ -245,9 +199,6 @@ let g:ale_linters = {
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '|'
 
-" Vimtex
-let g:polyglot_disabled = ['latex']
-
 " Gitgutter
 let g:gitgutter_highlight_lines = 0
 
@@ -260,10 +211,6 @@ let g:comfortable_motion_scroll_up_key = "k"
 
 " Gruvbox config
 let g:gruvbox_italic = 1
-
-" Material theme
-let g:material_theme_style = 'dark'
-let g:material_terminal_italics = 1
 
 " Rainbow
 let g:rainbow_active = 1
@@ -286,11 +233,12 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 set swapfile
 set dir=~/.swap-files
 
-" lightline
-set noshowmode
-
-" Markdown
-let g:vim_markdown_folding_disabled = 1
+" markdown
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 let g:vim_markdown_math = 1
-let g:vim_markdown_json_frontmatter = 1
-
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
