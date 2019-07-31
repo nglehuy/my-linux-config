@@ -156,3 +156,7 @@ prompt spaceship
 
 # config spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
+
+# alias
+alias cp='cp -gR'
+alias mv='mv -g'
