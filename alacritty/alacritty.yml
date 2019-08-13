@@ -108,7 +108,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) Source Code Pro
     #   - (Windows) Consolas
-    family: Meslo LG S for Powerline
+    family: Hasklig
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -119,7 +119,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Meslo LG S for Powerline
+    family: Hasklig
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -130,7 +130,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Meslo LG S for Powerline
+    family: Hasklig
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -174,7 +174,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x282828'
     foreground: '0xffffff'
 
     # Bright and dim foreground colors
