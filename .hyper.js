@@ -8,6 +8,10 @@ module.exports = {
     // or `'canary'` for less polished but more frequent updates
     updateChannel: "stable",
 
+    hypercwd: {
+      initialWorkingDirectory: "~/",
+    },
+
     // default font size in pixels for all tabs
     fontSize: 13,
 
@@ -147,7 +151,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyperterm-gruvbox-dark"],
+  plugins: ["hyperterm-gruvbox-dark", "hypercwd"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -159,6 +163,7 @@ module.exports = {
     // 'window:devtools': 'cmd+alt+o',
     "pane:next": "ctrl+alt+l",
     "pane:prev": "ctrl+alt+h",
-    "pane:splitHorizontal": "ctrl+e",
+    "pane:splitHorizontal": "ctrl+h",
+    "pane:splitVertical": "ctrl+v",
   },
 };
