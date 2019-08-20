@@ -71,6 +71,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+" Python indent
+Plugin 'Vimjas/vim-python-pep8-indent'
+
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -149,7 +152,7 @@ nnoremap <C-H> <C-W><C-H>
 " autopep8
 au BufNewFile,BufRead *.py
     \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
-
+map <C-i> :Autopep8<CR>
 set encoding=utf-8
 
 " start syntastic config
@@ -242,3 +245,6 @@ let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
+
+" wrap line
+set nowrap
