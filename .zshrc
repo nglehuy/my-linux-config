@@ -121,10 +121,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-
-# hyper
-#unsetopt PROMPT_SP
-
 # hadoop
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
 export PATH=${JAVA_HOME}/bin:${PATH}
@@ -166,3 +162,6 @@ alias rm='rm -vR'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+# hyper
+unsetopt PROMPT_SP
