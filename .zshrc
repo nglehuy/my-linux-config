@@ -161,3 +161,8 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 alias cp='cp -vR'
 alias mv='mv -v'
 alias rm='rm -vR'
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)

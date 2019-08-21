@@ -151,7 +151,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyperterm-gruvbox-dark", "hypercwd"],
+  plugins: ["hyperterm-gruvbox-dark", "hypercwd", "hyper-native-window-decoration"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

@@ -20,13 +20,13 @@
 ; background = ${xrdb:color0:#dd262626}
 ; background = #1d2021
 ; background = ${cyberdark.color1}
-background = ${gruvbox.bg-light}
-background-alt = ${gruvbox.bg-dark}
+background = ${gruvbox.bg-dark}
+background-alt = ${gruvbox.bg-light}
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = ${gruvbox.fg-light}
+foreground = ${gruvbox.fg-dark}
 ; foreground = #eee
-foreground-alt = ${gruvbox.fg-dark}
+foreground-alt = ${gruvbox.fg-light}
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
