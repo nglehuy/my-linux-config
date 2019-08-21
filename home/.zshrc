@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/lordh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # >>> conda initialize >>>
@@ -163,5 +163,5 @@ alias rm='rm -vR'
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
 
-# hyper
+# remove % at the top
 unsetopt PROMPT_SP
