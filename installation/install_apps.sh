@@ -18,6 +18,9 @@ sudo apt install nodejs \
     libsqlite3-dev \
     pkg-config \
     libnotify-dev \
+    fonts-noto \
+    fonts-roboto \
+    fonts-font-awesome \
     -y
 
 echo "Installing Linuxbrew ......................................................"

@@ -197,18 +197,21 @@ gaps outer 0
 #         status_command i3status
 # }
 
-# Repeat rate
-exec --no-startup-id xset r rate 230 80
-
 # pywal
 exec --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg"
 exec --no-startup-id wal -f "$HOME/.config/gruvbox.json"
 
-# Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+# i3-gnome
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
-# Restore GNOME's settings
-exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+exec_always --no-startup-id gnome-power-manager
 
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+exec --no-startup-id gnome-flashback
+
+# Polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
