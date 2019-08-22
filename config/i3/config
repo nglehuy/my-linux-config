@@ -201,9 +201,6 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec --no-startup-id feh --bg-fill "$HOME/Pictures/Picture 13.png" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
-# Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
-
 # i3-gnome
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
@@ -218,3 +215,6 @@ exec --no-startup-id gnome-flashback
 
 # Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
+
+# Polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
