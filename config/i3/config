@@ -168,10 +168,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border on all windows
-for_window [class=.*] border pixel 0
+for_window [class=.*] border pixel 1
 
 # default_border pixel 1
-default_floating_border pixel 0
+default_floating_border pixel 1
 
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
@@ -186,10 +186,10 @@ gaps outer 0
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-# client.focused          #282828 #282828 #282828 #282828
-# client.focused_inactive #282828 #282828 #282828 #282828
-# client.unfocused        #282828 #282828 #282828 #282828
-# client.urgent           #002b36 #dc322f #fdf6e3 #002b36
+client.focused          #928374 #928374 #928374 #928374
+client.focused_inactive #928374 #928374 #928374 #928374
+client.unfocused        #928374 #928374 #928374 #928374
+client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -201,10 +201,13 @@ gaps outer 0
 exec --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg"
 exec --no-startup-id wal -f "$HOME/.config/gruvbox.json"
 
+# Polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
 # i3-gnome
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 
-exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id gnome-power-manager
 
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
@@ -213,5 +216,3 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id gnome-flashback
 
-# Polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
