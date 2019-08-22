@@ -20,5 +20,6 @@ ln ../config/i3/config ~/.config/i3/
 mkdir ~/.config/polybar
 rm -r ~/.config/polybar/*
 ln ../config/polybar/* ~/.config/polybar/
-rm -r ~/.config/compton.conf
-ln ../config/compton.conf ~/.config/
+mkdir ~/.config/compton
+rm -r ~/.config/compton/*
+ln ../config/compton/compton.conf ~/.config/compton
