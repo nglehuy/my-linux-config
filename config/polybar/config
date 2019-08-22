@@ -99,9 +99,9 @@ font-1 = FontAwesome:size=11;3
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 ; font-3 = SF Pro Display:style=Bold:size=10;2
 
-modules-left = i3 xwindow
+modules-left = powermenu i3 xwindow
 modules-center =
-modules-right = wlan eth alsa battery memory cpu temperature backlight-acpi filesystem date time powermenu
+modules-right = wlan eth alsa battery memory cpu temperature backlight-acpi filesystem date time
 
 tray-position = right
 ; tray-background = ${colorful.sky}
@@ -532,18 +532,18 @@ ramp-foreground = ${gruvbox.aqua}
 [module/powermenu]
 type = custom/menu
 
-expand-right = false
+expand-right = true
 
 format-spacing = 1
 
 menu-0-0 = Reboot
-menu-0-0-exec = systemctl reboot
+menu-0-0-exec = gnome-session-quit --reboot
 menu-0-1 = Hibernate
 menu-0-1-exec = systemctl hibernate
 menu-0-2 = Poweroff
-menu-0-2-exec = systemctl poweroff
+menu-0-2-exec = gnome-session-quit --power-off
 menu-0-3 = Logout
-menu-0-3-exec = i3-msg exit
+menu-0-3-exec = gnome-session-quit --logout
 
 ; label-open = 
 label-open =  
