@@ -30,3 +30,8 @@ ln ../config/colorschemes/* ~/.config/colorschemes/
 echo "Executing pywal colorschemes ..........................."
 cd ~/
 wal -f ~/.config/colorschemes/gruvbox.json
+
+echo "Linking rofi config ...................................."
+mkdir ~/.config/rofi
+rm ~/.config/rofi/*
+ln ../config/rofi/* ~/.config/rofi/
