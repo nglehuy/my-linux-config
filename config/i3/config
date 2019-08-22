@@ -198,8 +198,8 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 # }
 
 # pywal
-#exec --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg"
-exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json"
+exec --no-startup-id feh --bg-fill "$HOME/Pictures/Picture 13.png" # Wallpaper
+exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # Polybar
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"

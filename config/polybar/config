@@ -108,10 +108,10 @@ tray-position = right
 ; tray-background = ${cyberdark.color1}
 tray-padding = 2
 
-; override-redirect = true
+override-redirect = false
 
 ;wm-restack = bspwm
-; wm-restack = i3
+;wm-restack = i3
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
