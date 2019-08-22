@@ -5,7 +5,7 @@ echo "Add speed ricer repo ..................................."
 sudo add-apt-repository ppa:kgilmer/speed-ricer -y
 
 echo "Installing ............................................."
-sudo apt install i3-gaps polybar compton rofi -y
+sudo apt install i3-gaps polybar compton rofi dunst -y
 
 echo "Installing i3-gnome ...................................."
 mkdir ~/open-source-apps
@@ -23,3 +23,6 @@ ln ../config/polybar/* ~/.config/polybar/
 mkdir ~/.config/compton
 rm -r ~/.config/compton/*
 ln ../config/compton/compton.conf ~/.config/compton
+mkdir ~/.config/dunst
+rm -r ~/.config/dunst/*
+ln ../config/dunst/dunstrc ~/.config/dunst/

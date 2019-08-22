@@ -21,6 +21,9 @@ sudo apt install nodejs \
     fonts-noto \
     fonts-roboto \
     fonts-font-awesome \
+    chromium-browser \
+    vlc \
+    inotify-tools \
     -y
 
 echo "Installing Linuxbrew ......................................................"
