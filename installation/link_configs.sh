@@ -25,7 +25,7 @@ ln ../home/.zshrc ~/
 echo "Linking colorschemes ..................................."
 mkdir ~/.config/colorschemes
 rm -r ~/.config/colorschemes/*
-ln ../colorschemes/* ~/.config/colorschemes/
+ln ../config/colorschemes/* ~/.config/colorschemes/
 
 echo "Executing pywal colorschemes ..........................."
 cd ~/

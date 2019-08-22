@@ -198,8 +198,8 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 # }
 
 # pywal
-exec --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg"
-exec --no-startup-id wal -f "$HOME/.config/gruvbox.json"
+#exec --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg"
+exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json"
 
 # Polybar
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
@@ -216,3 +216,5 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id gnome-flashback
 
+# Compton
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
