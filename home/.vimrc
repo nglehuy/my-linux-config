@@ -248,3 +248,6 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " wrap line
 set nowrap
+
+" rofi
+au BufNewFile,BufRead /*.rasi setf css
