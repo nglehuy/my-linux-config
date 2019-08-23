@@ -174,8 +174,9 @@ for_window [class=.*] border pixel 1
 default_floating_border pixel 1
 
 # Enable floating on specific windows
-for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
-for_window [class="Nautilus" instance="nautilus"] floating enable
+# for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
+# for_window [class="Nautilus" instance="nautilus"] floating enable
+for_window [class="[.]*"] floating enable
 
 # Gaps (i3-gaps)
 gaps inner 15
