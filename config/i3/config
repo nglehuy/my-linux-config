@@ -179,7 +179,7 @@ for_window [class="Nautilus" instance="nautilus"] floating enable
 # for_window [class="[.]*"] floating enable
 
 # Gaps (i3-gaps)
-gaps inner 8
+gaps inner 5
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
@@ -202,7 +202,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/121455.jpg" # Wallpaper
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/837258.png" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome

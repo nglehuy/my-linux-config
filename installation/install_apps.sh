@@ -26,6 +26,9 @@ if [[ $yes == y* ]]; then
         neofetch \
         papirus-icon-theme \
         materia-gtk-theme \
+        gnome-tweak-tool \
+        breeze-cursor-theme \
+        compton \
         -y
 else
     echo "Not installing apps"
