@@ -25,6 +25,7 @@ if [[ $yes == y* ]]; then
         inotify-tools \
         neofetch \
         papirus-icon-theme \
+        materia-gtk-theme \
         -y
 else
     echo "Not installing apps"
