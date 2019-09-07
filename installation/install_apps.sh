@@ -29,6 +29,7 @@ if [[ $yes == y* ]]; then
         gnome-tweak-tool \
         breeze-cursor-theme \
         compton \
+        dconf-editor \
         -y
 else
     echo "Not installing apps"
