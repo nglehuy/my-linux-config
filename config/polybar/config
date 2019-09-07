@@ -76,7 +76,7 @@ bottom = false
 offset-x = 0
 offset-y = 0
 radius = 0.0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -84,7 +84,7 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #eee
 
-border-size = 5
+border-size = 2
 border-color = ${colors.background}
 
 padding-left = 0
@@ -99,9 +99,9 @@ font-1 = FontAwesome:size=11;3
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 ; font-3 = SF Pro Display:style=Bold:size=10;2
 
-modules-left = powermenu i3 xwindow
-modules-center =
-modules-right = wlan eth alsa battery memory cpu temperature backlight-acpi filesystem date time
+modules-left = powermenu date xwindow
+modules-center = i3
+modules-right = wlan eth alsa battery memory cpu temperature time
 
 tray-position = right
 ; tray-background = ${colorful.sky}
@@ -130,9 +130,11 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-maxlen = 90
+label-maxlen = 70
 label-empty = Coolest Desktop Ever
 format-padding = ${general.padding}
+format-prefix = "  "
+format-prefix-foreground = ${gruvbox.purple}
 ; format-background = ${colorful.fig}
 ; format-background = ${cyberdark.color1}
 format-background = ${colors.background}

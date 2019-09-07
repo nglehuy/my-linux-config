@@ -168,10 +168,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border on all windows
-for_window [class=.*] border pixel 1
+for_window [class=.*] border pixel 2
 
 # default_border pixel 1
-default_floating_border pixel 1
+default_floating_border pixel 2
 
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
@@ -179,17 +179,17 @@ for_window [class="Nautilus" instance="nautilus"] floating enable
 # for_window [class="[.]*"] floating enable
 
 # Gaps (i3-gaps)
-gaps inner 15
+gaps inner 8
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+#smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #928374 #928374 #928374 #928374
-client.focused_inactive #928374 #928374 #928374 #928374
-client.unfocused        #928374 #928374 #928374 #928374
+client.focused          #282828 #282828 #282828 #282828
+client.focused_inactive #282828 #282828 #282828 #282828
+client.unfocused        #282828 #282828 #282828 #282828
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -202,7 +202,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-exec --no-startup-id feh --bg-fill "$HOME/Pictures/Picture 13.png" # Wallpaper
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/121455.jpg" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome
@@ -218,4 +218,4 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-flashback
 
 # Compton
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+# exec --no-startup-id compton --config ~/.config/compton/compton.conf
