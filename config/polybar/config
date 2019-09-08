@@ -94,14 +94,14 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Roboto Condensed:style=Regular:size=11;3
-font-1 = FontAwesome:size=11;3
-; font-2 = Ubuntu:style=Bold:size=10;2
+font-1 = Font Awesome 5 Free:style=Solid:size=11;2
+font-2 = Font Awesome 5 Brands:style=Regular:size=11;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 ; font-3 = SF Pro Display:style=Bold:size=10;2
 
 modules-left = powermenu date xwindow
 modules-center = i3
-modules-right = wlan eth alsa battery memory cpu temperature time
+modules-right = wlan eth memory cpu temperature time
 
 tray-position = right
 ; tray-background = ${colorful.sky}
@@ -133,7 +133,8 @@ label = %title%
 label-maxlen = 70
 label-empty = Coolest Desktop Ever
 format-padding = ${general.padding}
-format-prefix = "  "
+format-prefix-font = 2
+format-prefix = " "
 format-prefix-foreground = ${gruvbox.purple}
 ; format-background = ${colorful.fig}
 ; format-background = ${cyberdark.color1}
@@ -551,8 +552,10 @@ menu-0-3 = Logout
 menu-0-3-exec = gnome-session-quit --logout
 
 ; label-open = 
-label-open =  
-label-open-foreground = ${gruvbox.red}
+format-prefix = "  "
+format-prefix-foreground = ${gruvbox.red}
+label-open = Power
+label-open-foreground = ${colors.foreground}
 label-close = Cancel
 label-close-foreground = ${gruvbox.red}
 label-separator = |
