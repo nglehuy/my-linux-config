@@ -111,9 +111,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Linuxbrew
-export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-
 # Android
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -165,3 +162,6 @@ alias rm='rm -vR'
 
 # remove % at the top
 unsetopt PROMPT_SP
+#
+# Linuxbrew
+export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
