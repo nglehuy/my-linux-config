@@ -170,10 +170,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border on all windows
-for_window [class=.*] border pixel 2
+for_window [class=.*] border pixel 3
 
 # default_border pixel 1
-default_floating_border pixel 2
+default_floating_border pixel 3
 
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
@@ -185,11 +185,11 @@ gaps inner 8
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-#smart_gaps on
+smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #98971a #98971a #98971a #98971a
+client.focused          #282828 #282828 #282828 #282828
 client.focused_inactive #282828 #282828 #282828 #282828
 client.unfocused        #282828 #282828 #282828 #282828
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
