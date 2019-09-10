@@ -131,7 +131,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title%
-label-maxlen = 70
+label-maxlen = 50
 label-empty = Coolest Desktop Ever
 format-padding = ${general.padding}
 format-prefix-font = 2
