@@ -100,9 +100,9 @@ font-1 = FontAwesome:style=Regular:size=11;3
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 ; font-3 = SF Pro Display:style=Bold:size=10;2
 
-modules-left = powermenu date xwindow
+modules-left = powermenu date cpu temperature xwindow
 modules-center = i3
-modules-right = wlan eth memory cpu temperature time
+modules-right = wlan eth alsa battery memory time
 
 tray-position = right
 ; tray-background = ${colorful.sky}
@@ -136,7 +136,7 @@ label-empty = Coolest Desktop Ever
 format-padding = ${general.padding}
 format-prefix-font = 2
 format-prefix = "  "
-format-prefix-foreground = ${gruvbox.purple}
+format-prefix-foreground = ${gruvbox.yellow}
 ; format-background = ${colorful.fig}
 ; format-background = ${cyberdark.color1}
 format-background = ${colors.background}

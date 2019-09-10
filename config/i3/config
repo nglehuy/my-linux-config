@@ -170,10 +170,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border on all windows
-for_window [class=.*] border pixel 1
+for_window [class=.*] border pixel 2
 
 # default_border pixel 1
-default_floating_border pixel 1
+default_floating_border pixel 2
 
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
@@ -189,7 +189,7 @@ gaps outer 0
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
-client.focused          #282828 #282828 #282828 #282828
+client.focused          #98971a #98971a #98971a #98971a
 client.focused_inactive #282828 #282828 #282828 #282828
 client.unfocused        #282828 #282828 #282828 #282828
 client.urgent           #002b36 #dc322f #fdf6e3 #002b36
@@ -204,7 +204,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg" # Wallpaper
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/drawings_diversity_characters_signs_colorful_63651_1920x1080.jpg" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome
