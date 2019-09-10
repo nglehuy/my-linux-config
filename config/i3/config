@@ -204,7 +204,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-# exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg" # Wallpaper
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/5907472-tokyo-wallpaper.jpg" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome
