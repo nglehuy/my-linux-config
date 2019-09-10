@@ -94,8 +94,9 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Roboto Condensed:style=Regular:size=11;3
-font-1 = Font Awesome 5 Free:style=Solid:size=11;2
-font-2 = Font Awesome 5 Brands:style=Regular:size=11;2
+font-1 = FontAwesome:style=Regular:size=11;3
+;font-1 = Font Awesome 5 Free:style=Solid:size=11;2
+;font-2 = Font Awesome 5 Brands:style=Regular:size=11;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 ; font-3 = SF Pro Display:style=Bold:size=10;2
 
@@ -134,7 +135,7 @@ label-maxlen = 70
 label-empty = Coolest Desktop Ever
 format-padding = ${general.padding}
 format-prefix-font = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${gruvbox.purple}
 ; format-background = ${colorful.fig}
 ; format-background = ${cyberdark.color1}
