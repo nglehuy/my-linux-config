@@ -30,6 +30,7 @@ if [[ $yes == y* ]]; then
         breeze-cursor-theme \
         compton \
         dconf-editor \
+        libcurl4-openssl-dev \
         -y
 else
     echo "Not installing apps"
