@@ -1,5 +1,5 @@
 configuration {
-  font: "Source Code Pro for Powerline 18";
+  font: "Source Code Pro 18";
   show-icons: true;
   drun-icon-theme: "Papirus";
   fullscreen: true;
