@@ -31,6 +31,7 @@ if [[ $yes == y* ]]; then
         compton \
         dconf-editor \
         libcurl4-openssl-dev \
+        onedrive \
         -y
 else
     echo "Not installing apps"
@@ -78,18 +79,6 @@ echo "Cloning open souce apps ..................................................
 read yes
 if [[ $yes == y* ]]; then
     mkdir ~/open-source-apps
-    
-    # Onedrive
-    echo "Setting up onedrive .......................................................?"
-    curl -fsS https://dlang.org/install.sh | bash -s dmd
-    source ~/dlang/dmd-2.081.1/activate
-    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-    git clone https://github.com/abraunegg/onedrive.git ~/open-source-apps/onedrive-installation
-    cd ~/open-source-apps/onedrive-installation
-    ./configure
-    make clean; make;
-    sudo make install
-    
     # Powerline fonts
     echo "Setting up powerline fonts ................................................?"
     git clone https://github.com/powerline/fonts.git --depth=1 ~/open-source-apps/powerline-fonts

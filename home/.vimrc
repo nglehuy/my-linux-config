@@ -32,6 +32,8 @@ Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
 
 Plug 'yuttie/comfortable-motion.vim'
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
