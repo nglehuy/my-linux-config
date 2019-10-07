@@ -3,7 +3,7 @@ own_window = true,
 own_window_type = 'panel',
 own_window_transparent = true,
 own_window_hints = 'undecorated,above,skip_taskbar,skip_pager',
-own_window_colour = '#000000',
+own_window_colour = '#ffffff',
 own_window_class = 'Conky',
 own_window_title = 'sidebar Conky',
 
@@ -27,7 +27,7 @@ default_shade_color = 'black',
 draw_outline = false,-- amplifies text if yes
 default_outline_color = 'black',
 
-default_color = '#5D6474',-- dark
+default_color = '#ffffff',
 color1 = '#ffffff',-- white
 color2 = '#bf616a',-- Red
 color3 = '#a3be8c',-- Green
@@ -53,12 +53,12 @@ update_interval = 1,
 
 conky.text = [[
 
-${image ~/.icons/custom/drops/bg-light.png -p 0,0 -s 450x1080}
+${image ~/Pictures/wallpapersden.com_gradient-rainbow-5k_1920x1080.jpg -p 0,0 -s 450x1080}
 ${voffset 0}
 
-${voffset -20}${offset 80}${font source code pro font:Bold:size=60}${time %H:%M}
+${voffset -20}${offset 90}${font source code pro font:Bold:size=60}${time %H:%M}
 
-${voffset -150}${offset 130}${font source code pro font:Bold:size=13}${time %a %d %B}
+${voffset -150}${offset 140}${font source code pro font:Bold:size=13}${time %a %d %B}
 
 
 ${image ~/.icons/custom/drops/ram.png -p 50,290 -s 70x70}
@@ -71,7 +71,7 @@ ${voffset 0}${offset 140}${font source code pro font:size=11}${cpu cpu0}%
 
 ${image ~/.icons/custom/drops/temperature.png -p 50,430 -s 70x70}
 ${voffset -8}${offset 140}${font source code pro font:Bold:size=13}TEMP
-${voffset 0}${offset 140}${font source code pro font:size=11}${hwmon temp 1}°C
+${voffset 0}${offset 140}${font source code pro font:size=11}${hwmon 1 temp 1}°C
 
 ${image ~/.icons/custom/drops/home.png -p 50,500 -s 70x70}
 ${voffset -10}${offset 140}${font source code pro font:Bold:size=13}STORAGE
@@ -82,10 +82,10 @@ ${voffset 0}${offset 140}${font source code pro font:Bold:size=13}BATTERY
 ${voffset 0}${offset 140}${font Source Code Pro font:Regular:size=11}${battery}
 
 ${image ~/.icons/custom/drops/wifi.png -p 60,660 -s 50x55}
-${voffset 0}${offset 140}${font source code pro font:Bold:size=13}WIFI
-${voffset 0}${offset 140}${font source code pro font:Regular:size=11}${wireless_essid wlo1}
+${voffset 0}${offset 140}${font source code pro font:Bold:size=13}WIFI ${downspeed wlp3s0} - ${upspeed wlp3s0}
+${voffset 0}${offset 140}${font source code pro font:Regular:size=11}${wireless_essid wlp3s0}
 
-${image ~/.icons/custom/drops/volume.png -p 10,860 -s 140x140}
-${voffset 140}${offset 160}${color1}${font source code pro font:Bold:size=16}${if_running mpd}${mpd_artist}${else}Not playing${endif}
-${voffset 0}${offset 165}${font source code pro font:size=11}${if_running mpd}${mpd_title}${else}Music${endif}
+#${image ~/.icons/custom/drops/volume.png -p 10,860 -s 140x140}
+#${voffset 140}${offset 160}${color1}${font source code pro font:Bold:size=16}${if_running mpd}${mpd_artist}${else}Not playing${endif}
+#${voffset 0}${offset 165}${font source code pro font:size=11}${if_running mpd}${mpd_title}${else}Music${endif}
 ]];
