@@ -1,0 +1,91 @@
+conky.config = {
+own_window = true,
+own_window_type = 'panel',
+own_window_transparent = true,
+own_window_hints = 'undecorated,above,skip_taskbar,skip_pager',
+own_window_colour = '#000000',
+own_window_class = 'Conky',
+own_window_title = 'sidebar Conky',
+
+minimum_width = 450, 
+minimum_height = 1080,
+maximum_width = 450,
+
+gap_x = 38,--## left | right
+gap_y = 0,--## up | down
+
+
+use_xft = true,
+font = 'source code pro font:size=11',
+
+override_utf8_locale = true,
+
+uppercase = false,
+draw_shades = false,--yes
+default_shade_color = 'black',
+
+draw_outline = false,-- amplifies text if yes
+default_outline_color = 'black',
+
+default_color = '#5D6474',-- dark
+color1 = '#ffffff',-- white
+color2 = '#bf616a',-- Red
+color3 = '#a3be8c',-- Green
+color4 = '#ebcb8b',-- Yellow
+color5 = '#81a1c1',-- Blue
+
+draw_borders = false,
+stippled_borders = 0,
+border_inner_margin = 0,
+border_outer_margin = 0,
+border_width = 0,
+draw_graph_borders = true,--no
+background = true,
+use_spacer = 'none',
+no_buffers = true,
+short_units = true,
+pad_percents = 2,
+imlib_cache_size = 0,
+double_buffer = true,
+update_interval = 1,
+
+};
+
+conky.text = [[
+
+${image ~/.icons/custom/drops/bg-light.png -p 0,0 -s 450x1080}
+${voffset 0}
+
+${voffset -20}${offset 80}${font source code pro font:Bold:size=60}${time %H:%M}
+
+${voffset -150}${offset 130}${font source code pro font:Bold:size=13}${time %a %d %B}
+
+
+${image ~/.icons/custom/drops/ram.png -p 50,290 -s 70x70}
+${voffset 70}${offset 140}${font source code pro font:Bold:size=13}RAM
+${voffset 0}${offset 140}${font source code pro font:size=11}$mem / $memmax
+
+${image ~/.icons/custom/drops/cpu.png -p 50,360 -s 70x70}
+${voffset -10}${offset 140}${font source code pro font:Bold:size=13}CPU
+${voffset 0}${offset 140}${font source code pro font:size=11}${cpu cpu0}%
+
+${image ~/.icons/custom/drops/temperature.png -p 50,430 -s 70x70}
+${voffset -8}${offset 140}${font source code pro font:Bold:size=13}TEMP
+${voffset 0}${offset 140}${font source code pro font:size=11}${hwmon temp 1}°C
+
+${image ~/.icons/custom/drops/home.png -p 50,500 -s 70x70}
+${voffset -10}${offset 140}${font source code pro font:Bold:size=13}STORAGE
+${voffset 0}${offset 140}${font source code pro font:size=11}${fs_used /home} / ${fs_size /home}
+
+${image ~/.icons/custom/drops/battery.png -p 50,580 -s 70x70}
+${voffset 0}${offset 140}${font source code pro font:Bold:size=13}BATTERY
+${voffset 0}${offset 140}${font Source Code Pro font:Regular:size=11}${battery}
+
+${image ~/.icons/custom/drops/wifi.png -p 60,660 -s 50x55}
+${voffset 0}${offset 140}${font source code pro font:Bold:size=13}WIFI
+${voffset 0}${offset 140}${font source code pro font:Regular:size=11}${wireless_essid wlo1}
+
+${image ~/.icons/custom/drops/volume.png -p 10,860 -s 140x140}
+${voffset 140}${offset 160}${color1}${font source code pro font:Bold:size=16}${if_running mpd}${mpd_artist}${else}Not playing${endif}
+${voffset 0}${offset 165}${font source code pro font:size=11}${if_running mpd}${mpd_title}${else}Music${endif}
+]];
