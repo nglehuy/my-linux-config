@@ -34,4 +34,10 @@ wal -f ~/.config/colorschemes/gruvbox.json
 echo "Linking rofi config ...................................."
 mkdir ~/.config/rofi
 rm ~/.config/rofi/*
+cd ~/my-linux-config
 ln ./config/rofi/* ~/.config/rofi/
+
+echo "Linking kitty terminal ................................."
+mkdir ~/.config/kitty
+rm  ~/.config/kitty/*
+ln ./config/kitty/* ~/.config/kitty

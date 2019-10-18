@@ -165,3 +165,4 @@ unsetopt PROMPT_SP
 #
 # Linuxbrew
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+fpath=($fpath "/home/lordh/.zfunctions")

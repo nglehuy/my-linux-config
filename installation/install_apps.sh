@@ -8,13 +8,14 @@ if [[ $yes == y* ]]; then
         ibus-bamboo \
         vim \
         build-essential \
-        alacritty \
         default-jdk \
         default-jre \
         python-pip \
         python3-pip \
         zsh \
-        ubuntu-restricted-extras \
+        ttf-mscorefonts-installer \
+        libavcodec-extra \
+        unrar \
         libsqlite3-dev \
         pkg-config \
         libnotify-dev \
@@ -25,13 +26,13 @@ if [[ $yes == y* ]]; then
         inotify-tools \
         neofetch \
         papirus-icon-theme \
+	arc-theme \
         materia-gtk-theme \
         gnome-tweak-tool \
         breeze-cursor-theme \
         compton \
         dconf-editor \
         libcurl4-openssl-dev \
-        onedrive \
         -y
 else
     echo "Not installing apps"

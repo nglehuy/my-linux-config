@@ -8,9 +8,6 @@ if [[ $yes == y* ]]; then
     
     # Ibus bamboo
     sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-    
-    # Alacritty
-    sudo add-apt-repository ppa:mmstick76/alacritty -y
 else
     echo "Not adding ppas"
 fi
