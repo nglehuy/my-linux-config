@@ -33,7 +33,7 @@ alert = #bd2c40
 transparent = #000000000
 
 [general]
-padding = 4
+padding = 3
 
 [cyberdark]
 color1 = #1f2430
@@ -71,7 +71,7 @@ basil = #486824
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 27
+height = 25
 bottom = false
 offset-x = 0
 offset-y = 0
@@ -93,8 +93,8 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = SF Pro Display:style=Regular:size=12;3
-font-1 = FontAwesome:style=Regular:size=12;3
+font-0 = Cantarell:style=Bold:size=10;1
+font-1 = FontAwesome:style=Regular:size=11;2
 ;font-1 = Font Awesome 5 Free:style=Solid:size=11;2
 ;font-2 = Font Awesome 5 Brands:style=Regular:size=11;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
@@ -216,7 +216,7 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused =   %icon% %index%
+label-focused =   %index%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${gruvbox.green}
 ; label-focused-underline = ${colorful.green}

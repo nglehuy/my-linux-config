@@ -185,7 +185,7 @@ gaps inner 8
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+#smart_gaps on
 
 # Window Border color
 # class                 border  backgr. text    indicator child_border
@@ -204,7 +204,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/drawings_diversity_characters_signs_colorful_63651_1920x1080.jpg" # Wallpaper
+# exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/drawings_diversity_characters_signs_colorful_63651_1920x1080.jpg" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome
