@@ -12,7 +12,7 @@ fi
 echo "Installing .............................................?"
 read yes
 if [[ $yes == y* ]]; then
-    sudo apt install i3-gaps gnome-flashback gnome-screensaver polybar feh rofi dunst -y
+    sudo apt install i3-gaps gnome-flashback gnome-screensaver lm-sensors polybar feh rofi dunst -y
 else
     echo "Not installing apps"
 fi
@@ -46,4 +46,12 @@ if [[ $yes == y* ]]; then
     ln ./config/dunst/dunstrc ~/.config/dunst/
 else
     echo "Not hard linking"
+fi
+
+echo "Run sensors-detect .....................................?"
+read yes
+if [[ $yes == y* ]]; then
+    sudo sensors-detect
+else
+    echo "Not running sensors-detect"
 fi

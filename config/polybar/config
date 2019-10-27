@@ -71,7 +71,7 @@ basil = #486824
 [bar/example]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 25
+height = 23
 bottom = false
 offset-x = 0
 offset-y = 0
@@ -84,7 +84,7 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #eee
 
-border-size = 3
+border-size = 2
 border-color = ${colors.background}
 
 padding-left = 0
@@ -96,9 +96,8 @@ module-margin-right = 0
 font-0 = Cantarell:style=Bold:size=10;1
 font-1 = FontAwesome:style=Regular:size=11;2
 ;font-1 = Font Awesome 5 Free:style=Solid:size=11;2
-;font-2 = Font Awesome 5 Brands:style=Regular:size=11;2
+font-2 = Cantarell:style=Bold:size=11;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
-; font-3 = SF Pro Display:style=Bold:size=10;2
 
 modules-left = powermenu date cpu temperature xwindow
 modules-center = i3
@@ -217,8 +216,9 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused =   %index%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${gruvbox.green}
+label-focused-foreground = ${gruvbox.green}
+label-focused-background = ${colors.background}
+label-focused-font = 3
 ; label-focused-underline = ${colorful.green}
 ; label-focused-underline = ${cyberdark.color1}
 label-focused-padding = ${self.label-mode-padding}
@@ -516,7 +516,7 @@ type = internal/temperature
 thermal-zone = 0
 base-temperature = 45
 warn-temperature = 70
-hwmon-path = /sys/devices/virtual/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input
 interval = 1
 
 format = <ramp>  <label>
