@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -40,7 +41,7 @@ bindsym $mod+Shift+q kill
 # rofi app and window launchers
 bindsym $mod+space exec rofi -show drun -theme gruvbox
 bindsym $mod+Shift+space exec rofi -show run -theme gruvbox
-bindsym $mod+Ctrl+space exec rofi -show window -theme gruvbox
+bindsym $alt+Tab exec rofi -show window -theme gruvbox
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -176,8 +177,9 @@ for_window [class=.*] border pixel 3
 default_floating_border pixel 3
 
 # Enable floating on specific windows
-# for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
-# for_window [class="Nautilus" instance="nautilus"] floating enable
+for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
+for_window [class="Nautilus" instance="nautilus"] floating enable
+for_window [class="Evince" instance="evince"] floating enable
 # for_window [class="[.]*"] floating enable
 
 # Gaps (i3-gaps)
