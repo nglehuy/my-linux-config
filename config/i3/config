@@ -176,6 +176,8 @@ for_window [class=.*] border pixel 3
 # default_border pixel 1
 default_floating_border pixel 3
 
+focus_follows_mouse no
+
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
 for_window [class="Nautilus" instance="nautilus"] floating enable
