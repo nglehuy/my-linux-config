@@ -158,12 +158,10 @@ alias rm='rm -vR'
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # remove % at the top
 unsetopt PROMPT_SP
 #
 # Linuxbrew
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
-fpath=($fpath "/home/lordh/.zfunctions")
-fpath=($fpath "/home/lordh/.zfunctions")
