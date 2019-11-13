@@ -144,13 +144,13 @@ modules-right =
 [bar/left]
 inherit = bar/right
 
-width = 20%
+width = 25%
 
 offset-x = 0%:10
 offset-y = 10
 
 modules-center =
-modules-left = cpu temperature memory
+modules-left = cpu temperature memory filesystem
 modules-right =
 
 tray-position = right
