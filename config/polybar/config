@@ -150,7 +150,7 @@ offset-x = 0%:10
 offset-y = 10
 
 modules-center =
-modules-left = powermenu cpu temperature memory filesystem
+modules-left = powermenu cpu temperature memory
 modules-right =
 
 tray-position = right
