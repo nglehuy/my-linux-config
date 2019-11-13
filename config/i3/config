@@ -185,8 +185,9 @@ for_window [class="Evince" instance="evince"] floating enable
 # for_window [class="[.]*"] floating enable
 
 # Gaps (i3-gaps)
-gaps inner 5
-gaps outer 0
+gaps inner 10
+gaps top 44
+# gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
 #smart_gaps on
@@ -208,7 +209,7 @@ client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # pywal
-# exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/drawings_diversity_characters_signs_colorful_63651_1920x1080.jpg" # Wallpaper
+exec_always --no-startup-id feh --bg-fill "$HOME/Pictures/wallpaper.png" # Wallpaper
 exec --no-startup-id wal -f "$HOME/.config/colorschemes/gruvbox.json" # Colorscheme
 
 # i3-gnome
