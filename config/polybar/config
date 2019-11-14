@@ -72,11 +72,11 @@ basil = #486824
 [bar/right]
 monitor = ${env:MONITOR:}
 width = 25%
-height = 34
+height = 30
 bottom = false
 offset-x = 75%:-10
 offset-y = 10
-radius = 17
+radius = 15
 fixed-center = true
 
 background = ${colors.background-alt}

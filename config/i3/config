@@ -171,10 +171,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border on all windows
-for_window [class=.*] border pixel 3
+for_window [class=.*] border pixel 0
 
 # default_border pixel 1
-default_floating_border pixel 3
+default_floating_border pixel 0
 
 focus_follows_mouse no
 
@@ -186,7 +186,7 @@ for_window [class="Evince" instance="evince"] floating enable
 
 # Gaps (i3-gaps)
 gaps inner 10
-gaps top 44
+gaps top 40
 # gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
