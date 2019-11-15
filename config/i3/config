@@ -181,6 +181,7 @@ focus_follows_mouse no
 # Enable floating on specific windows
 for_window [class="Gnome-control-center" instance="gnome-control-center"] floating enable
 for_window [class="Nautilus" instance="nautilus"] floating enable
+for_window [class="Yad" title="yad-calendar"] floating enable
 # for_window [class="Evince" instance="evince"] floating enable
 # for_window [class="[.]*"] floating enable
 

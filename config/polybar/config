@@ -103,7 +103,7 @@ font-2 = Roboto:style=Bold:size=11;2
 
 modules-left = 
 modules-center = 
-modules-right = date time 
+modules-right = calendar time 
 
 tray-position = left
 tray-padding = 2
@@ -385,6 +385,17 @@ format-disconnected = 
 format-disconnected-foreground = ${colors.foreground-alt}
 format-disconnected-padding = ${general.padding}
 ;label-disconnected = %ifname% disconnected
+
+[module/calendar]
+type = custom/script
+exec = ~/.config/polybar/calendar.sh
+interval = 5
+click-left = ~/.config/polybar/calendar.sh --popup
+
+format-prefix = "  "
+format-prefix-foreground = ${gruvbox.blue}
+format-padding = ${general.padding}
+
 
 [module/date]
 type = internal/date
