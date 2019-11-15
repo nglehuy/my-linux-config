@@ -20,7 +20,7 @@
 ; background = ${xrdb:color0:#dd262626}
 ; background = #1d2021
 ; background = ${cyberdark.color1}
-background = ${gruvbox.bg-dark}
+background = #2f343f
 background-alt = ${gruvbox.bg-dark}
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
@@ -101,14 +101,14 @@ font-1 = FontAwesome:style=Regular:size=11;3
 font-2 = Roboto:style=Bold:size=11;2
 ; font-3 = unifont:fontformat=truetype:size=8:antialias=false;2
 
-modules-left = wlan eth alsa battery
+modules-left = 
 modules-center = 
 modules-right = date time 
 
-tray-position = none
+tray-position = left
 tray-padding = 2
 tray-detached = true
-tray-offset-x = -17
+tray-offset-x = 17
 tray-offset-y = 0
 tray-maxsize = 16
 
@@ -140,6 +140,8 @@ modules-center = i3
 modules-left =
 modules-right =
 
+tray-position = none
+
 [bar/left]
 inherit = bar/right
 
@@ -148,11 +150,11 @@ width = 25%
 offset-x = 0%:10
 offset-y = 10
 
-modules-center =
 modules-left = powermenu cpu temperature memory
-modules-right =
+modules-center =
+modules-right = alsa battery
 
-tray-position = right
+tray-position = none
 
 [module/xwindow]
 type = internal/xwindow
@@ -243,7 +245,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused =  %index%
-label-focused-foreground = ${gruvbox.green}
+label-focused-foreground = ${gruvbox.red}
 label-focused-background = ${colors.background}
 label-focused-font = 3
 ; label-focused-underline = ${colorful.green}
@@ -418,20 +420,21 @@ label = %time%
 type = internal/pulseaudio
 
 ; format-volume = <label-volume>  <bar-volume>
-format-volume = 
-; label-volume = %percentage%%
+format-volume = <ramp-volume>  <label-volume>
+label-volume = %percentage%%
 format-volume-foreground = ${gruvbox.yellow}
 format-volume-padding = ${general.padding}
 
-label-muted = 
-label-muted-foreground = ${colors.foreground-alt}
+format-muted =  <label-muted>
+label-muted = 
+format-muted-foreground = ${colors.foreground-alt}
 ;format-muted-background = ${self.format-volume-background}
 format-muted-padding = ${self.format-volume-padding}
 
-;ramp-volume-0 = 
-;ramp-volume-1 = 
-;ramp-volume-2 = 
-;ramp-volume-foreground = ${gruvbox.yellow}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${gruvbox.yellow}
 
 
 ; bar-volume-width = 10

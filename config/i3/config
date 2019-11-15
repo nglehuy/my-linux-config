@@ -224,5 +224,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 exec --no-startup-id gnome-flashback
 
+exec --no-startup-id nm-applet
+
 # Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
