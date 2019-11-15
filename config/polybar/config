@@ -245,7 +245,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused =  %index%
-label-focused-foreground = ${gruvbox.red}
+label-focused-foreground = ${colors.primary}
 label-focused-background = ${colors.background}
 label-focused-font = 3
 ; label-focused-underline = ${colorful.green}
