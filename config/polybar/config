@@ -35,12 +35,6 @@ transparent = #000000000
 [general]
 padding = 3
 
-[cyberdark]
-color1 = #1f2430
-color2 = #bbbbbb
-color3 = #5ccfe6
-color4 = #273747
-
 [gruvbox]
 bg-dark = #1d2021
 fg-dark = #ebdbb2
@@ -150,7 +144,7 @@ width = 25%
 offset-x = 0%:10
 offset-y = 10
 
-modules-left = powermenu cpu temperature memory
+modules-left = powermenu cpu temperature memory filesystem
 modules-center =
 modules-right = alsa battery
 
