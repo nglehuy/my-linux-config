@@ -20,11 +20,11 @@
 ; background = ${xrdb:color0:#dd262626}
 ; background = #1d2021
 ; background = ${cyberdark.color1}
-background = #2f343f
+background = #deffffff
 background-alt = ${gruvbox.bg-dark}
 ;background-alt = #666
 ;foreground = ${xrdb:color7:#222}
-foreground = ${gruvbox.fg-dark}
+foreground = ${gruvbox.fg-light}
 ; foreground = #eee
 foreground-alt = #666666
 primary = #ffb52a
@@ -79,9 +79,9 @@ line-size = 0
 line-color = #eee
 
 border-size = 0
-border-bottom-size = 0
+; border-bottom-size = 0
 ; border-color = ${colors.background}
-border-transparent= true
+border-transparent = true
 
 padding-left = 5
 padding-right = 5
@@ -89,7 +89,7 @@ padding-right = 5
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Roboto:style=Medium:size=10;2
+font-0 = Roboto:style=Normal:size=11;3
 font-1 = FontAwesome:style=Regular:size=11;3
 ;font-1 = Font Awesome 5 Free:style=Solid:size=11;2
 font-2 = Roboto:style=Bold:size=11;2
@@ -146,9 +146,34 @@ offset-y = 10
 
 modules-left = powermenu cpu temperature memory filesystem
 modules-center =
-modules-right = alsa battery
+modules-right = 
 
 tray-position = none
+
+[bar/one]
+inherit = bar/right
+
+width = 100%
+height = 25
+offset-x = 0
+offset-y = 0
+radius = 0
+
+border-size = 2
+border-color = ${colors.background}
+
+padding-left = 3
+padding-right = 3
+
+modules-left = powermenu cpu temperature memory filesystem
+modules-center = i3
+modules-right = alsa battery calendar time
+
+tray-position = right
+tray-detached = false
+tray-offset-x = 0
+
+override-redirect = true
 
 [module/xwindow]
 type = internal/xwindow

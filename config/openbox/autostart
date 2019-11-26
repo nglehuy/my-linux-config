@@ -1,0 +1,4 @@
+compton --config ~/.config/compton/compton.conf &
+feh --bg-fill "$HOME/Pictures/wallpaper.png" &
+"$HOME/.config/polybar/launch.sh" &
+
