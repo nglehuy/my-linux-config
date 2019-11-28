@@ -165,3 +165,16 @@ unsetopt PROMPT_SP
 #
 # Linuxbrew
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
+
+# maven
+export PATH=$HOME/apache-maven-3.6.3/bin:$PATH
+
+# pyenv
+export PATH="/home/lordh/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/lordh/.sdkman"
+[[ -s "/home/lordh/.sdkman/bin/sdkman-init.sh" ]] && source "/home/lordh/.sdkman/bin/sdkman-init.sh"

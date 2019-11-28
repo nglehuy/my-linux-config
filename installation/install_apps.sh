@@ -26,13 +26,28 @@ if [[ $yes == y* ]]; then
         inotify-tools \
         neofetch \
         papirus-icon-theme \
-	arc-theme \
+    	arc-theme \
         materia-gtk-theme \
         gnome-tweak-tool \
         breeze-cursor-theme \
         compton \
         dconf-editor \
         libcurl4-openssl-dev \
+        make \
+        libssl-dev \
+        zlib1g-dev \
+        libbz2-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        wget \
+        llvm \
+        libncurses5-dev \
+        libncuresw5-dev \
+        xz-utils \
+        tk-dev \
+        libffi-dev \
+        liblzma-dev \
+        python-openssl \
         -y
 else
     echo "Not installing apps"
@@ -117,4 +132,14 @@ if [[ $yes == y* ]]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 else
     echo "Not installing zsh plugins"
+fi
+
+# Pyenv
+echo "Install pyenv .............................................................?"
+read yes
+if [[ $yes == y* ]]; then
+    cd ~/
+    curl https://pyenv.run | bash
+else
+    echo "Not installing pyenv"
 fi
