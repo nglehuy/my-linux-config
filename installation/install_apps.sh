@@ -42,7 +42,7 @@ if [[ $yes == y* ]]; then
         wget \
         llvm \
         libncurses5-dev \
-        libncuresw5-dev \
+#        libncuresw5-dev \
         xz-utils \
         tk-dev \
         libffi-dev \
