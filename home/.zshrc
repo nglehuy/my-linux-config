@@ -142,11 +142,6 @@ export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 # npm
 export PATH=~/.npm-global/bin:$PATH
 
-# Set Spaceship ZSH as a prompt
-fpath=($fpath "$HOME/.zfunctions")
-autoload -U promptinit; promptinit
-prompt spaceship
-
 # config spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 
@@ -178,3 +173,8 @@ eval "$(pyenv virtualenv-init -)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Set Spaceship ZSH as a prompt
+fpath=($fpath "$HOME/.zfunctions")
+autoload -U promptinit; promptinit
+prompt spaceship
