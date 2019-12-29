@@ -30,7 +30,6 @@ if [[ $yes == y* ]]; then
         materia-gtk-theme \
         gnome-tweak-tool \
         breeze-cursor-theme \
-        compton \
         dconf-editor \
         libcurl4-openssl-dev \
         make \
