@@ -1,5 +1,5 @@
 configuration {
-  font: "Hasklig Medium 18";
+  font: "Hack 18";
   show-icons: true;
   drun-icon-theme: "Papirus";
   fullscreen: true;

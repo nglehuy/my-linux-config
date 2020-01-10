@@ -119,7 +119,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # hadoop
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=${JAVA_HOME}/bin:${PATH}
 export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 export HADOOP_HOME=/home/$USER/hadoop-3.2.0
@@ -178,3 +178,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 fpath=($fpath "$HOME/.zfunctions")
 autoload -U promptinit; promptinit
 prompt spaceship
+
+# if [[ $DISPLAY ]]; then
+#     # If not running interactively, do not do anything
+#     [[ $- != *i* ]] && return
+#     [[ -z "$TMUX" ]] && exec tmux
+# fi
+
+export TERM=xterm-256color
