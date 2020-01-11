@@ -140,6 +140,10 @@ read yes
 if [[ $yes == y* ]]; then
     cd ~/
     curl https://pyenv.run | bash
+    pyenv install 3.7.4
+    pyenv install 2.7.17
+    pyenv shell 3.7.4 && pip install neovim
+    pyenv shell 2.7.17 && pip install neovim
 else
     echo "Not installing pyenv"
 fi
