@@ -134,6 +134,15 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
 " end NERDTree config
 
+" save session
+autocmd VimLeave * :mksession! .session.vim
+
+" load session
+if getcwd() != $HOME.'/.config/nvim/' && filereadable(".session.vim")
+  " source local project Session.vim
+  source .session.vim
+endif
+
 " set default indentation
 set tabstop=4
 set shiftwidth=4
