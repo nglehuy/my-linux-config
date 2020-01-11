@@ -262,3 +262,5 @@ set nowrap
 
 " rofi
 au BufNewFile,BufRead /*.rasi setf css
+
+set shell=/bin/sh
