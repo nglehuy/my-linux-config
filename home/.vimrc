@@ -34,6 +34,12 @@ Plug 'yuttie/comfortable-motion.vim'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
 
+Plug 'kana/vim-operator-user'
+
+Plug 'rhysd/vim-operator-surround'
+
+Plug 'cocopon/vaffle.vim'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -67,7 +73,7 @@ Plugin 'rhysd/vim-clang-format'
 Plugin 'alvan/vim-closetag'
 
 " NerdTree
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -108,16 +114,16 @@ color gruvbox
 " color PaperColor
 " color molokai
 " colorscheme ayu
-" let g:airline_theme='deus'
+let g:airline_theme='deus'
 " let g:molokai_original = 1
 " end theme config
 
 " start netrw config
-" let g:netrw_banner = 0
-" let g:netrw_browse_split = 4
-" let g:netrw_liststyle = 3
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 25
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 " end netrw config
 execute pathogen#infect()
 call pathogen#helptags()
@@ -130,18 +136,24 @@ let NERDTreeHijackNetrw = 1
 map <C-t> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
+autocmd VimEnter * :call LoadSession()
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | :call OpenVaffle() | endif
 " end NERDTree config
 
 " save session
+" autocmd VimLeave * NERDTreeClose
 autocmd VimLeave * if getcwd() != $HOME && getcwd() != $HOME.'/.config/nvim/' | :mksession! .session.vim | endif
 
 " load session
-if getcwd() != $HOME.'/.config/nvim/' && getcwd() != $HOME && filereadable(".session.vim")
-  " source local project Session.vim
-  source .session.vim
-endif
+function! LoadSession()
+    if getcwd() != $HOME.'/.config/nvim/' && getcwd() != $HOME && filereadable(".session.vim")
+      " source local project Session.vim
+      source .session.vim
+    endif
+endfunction
 
 " set default indentation
 set tabstop=4
@@ -264,3 +276,21 @@ set nowrap
 au BufNewFile,BufRead /*.rasi setf css
 
 set shell=/bin/sh
+
+" operator mappings
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+
+" Vaffle
+function! OpenVaffle() abort
+  if bufname('%') == ''
+    call vaffle#init()
+  else
+    call vaffle#init(expand('%:p'))
+  endif
+endfunction
+nnoremap <leader>dd :call OpenVaffle()<CR>
+let g:vaffle_show_hidden_files = 1
+map s <Plug>(vaffle-open-selected-split)
+map v <Plug>(vaffle-open-selected-vsplit)
