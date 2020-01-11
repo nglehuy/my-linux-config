@@ -135,10 +135,10 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " end NERDTree config
 
 " save session
-autocmd VimLeave * :mksession! .session.vim
+autocmd VimLeave * if getcwd() != $HOME && getcwd() != $HOME.'/.config/nvim/' | :mksession! .session.vim | endif
 
 " load session
-if getcwd() != $HOME.'/.config/nvim/' && filereadable(".session.vim")
+if getcwd() != $HOME.'/.config/nvim/' && getcwd() != $HOME && filereadable(".session.vim")
   " source local project Session.vim
   source .session.vim
 endif
