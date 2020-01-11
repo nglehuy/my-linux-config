@@ -88,6 +88,7 @@ filetype plugin indent on    " required
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#option('ignore_sources': { 'py' })
 
 " start nvim/vim config
 set relativenumber
@@ -136,16 +137,16 @@ let NERDTreeHijackNetrw = 1
 map <C-t> :NERDTreeToggle<CR>
 " Start NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * :call LoadSession()
+autocmd VimEnter * nested call LoadSession()
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | :call OpenVaffle() | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | call OpenVaffle() | endif
 " end NERDTree config
 
 " save session
 " autocmd VimLeave * NERDTreeClose
-autocmd VimLeave * if getcwd() != $HOME && getcwd() != $HOME.'/.config/nvim/' | :mksession! .session.vim | endif
+autocmd VimLeave * if getcwd() != $HOME && getcwd() != $HOME.'/.config/nvim/' | mksession! .session.vim | endif
 
 " load session
 function! LoadSession()
@@ -154,6 +155,8 @@ function! LoadSession()
       source .session.vim
     endif
 endfunction
+
+set sessionoptions-=options  " Don't save options
 
 " set default indentation
 set tabstop=4
