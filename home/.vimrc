@@ -22,7 +22,7 @@ Plug 'sheerun/vim-polyglot'                     " syntax++
 
 Plug 'chrisbra/csv.vim'                         " csv
 
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }      " js, ts autoformat
+Plug 'prettier/vim-prettier', { 'do': 'yarn' }      " js, ts autoformat
 
 Plug 'vim-scripts/indentpython.vim'
 
@@ -32,7 +32,7 @@ Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
 
 Plug 'yuttie/comfortable-motion.vim'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn'  }
 
 Plug 'kana/vim-operator-user'
 
