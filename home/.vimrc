@@ -295,5 +295,5 @@ function! OpenVaffle() abort
 endfunction
 nnoremap <leader>dd :call OpenVaffle()<CR>
 let g:vaffle_show_hidden_files = 1
-map s <Plug>(vaffle-open-selected-split)
-map v <Plug>(vaffle-open-selected-vsplit)
+map sh <Plug>(vaffle-open-selected-split)
+map sv <Plug>(vaffle-open-selected-vsplit)
