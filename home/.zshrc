@@ -149,6 +149,7 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 alias cp='cp -vR'
 alias mv='mv -v'
 alias rm='rm -vR'
+alias docean='ssh root@178.128.94.251'
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
