@@ -80,7 +80,7 @@ else
     echo "Not installing pywal"
 fi
 
-echo "Installing nodejs modules .................................................?"
+echo "Installing nodejs modules using npm .................................................?"
 read yes
 if [[ $yes == y* ]]; then
     mkdir ~/.npm-global
@@ -146,4 +146,15 @@ if [[ $yes == y* ]]; then
     pyenv shell 2.7.17 && pip install neovim
 else
     echo "Not installing pyenv"
+fi
+
+# Yarn
+echo "Install yarn ..............................................................?"
+read yes
+if [[ $yes == y* ]]; then
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt update && sudo apt install yarn
+else
+    eco "Not installing yarn"
 fi
