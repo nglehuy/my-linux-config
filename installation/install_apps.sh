@@ -48,6 +48,7 @@ if [[ $yes == y* ]]; then
         liblzma-dev \
         python-openssl \
         googler \
+        jq \
         -y
 else
     echo "Not installing apps"

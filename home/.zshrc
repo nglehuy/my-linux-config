@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="spaceship"
+# ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -62,9 +62,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,6 +142,16 @@ export PATH=~/.npm-global/bin:$PATH
 
 # config spaceship
 SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_CHAR_SYMBOL="  "
+SPACESHIP_CHAR_SYMBOL="  "
+# SPACESHIP_CHAR_SYMBOL="  "
+# SPACESHIP_CHAR_SYMBOL="  "
+# SPACESHIP_CHAR_SYMBOL="  "
+# SPACESHIP_CHAR_SYMBOL="  "
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_COLOR="green"
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_DIR_TRUNC=0
 
 # alias
 alias cp='cp -vR'
