@@ -57,7 +57,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
 " COC 
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
 
 " OPERATOR TO SURROUND A TEXT OBJECT
 Plugin 'kana/vim-operator-user'
@@ -75,11 +75,17 @@ Plugin 'chrisbra/csv.vim'
 " Syntax++
 Plugin 'sheerun/vim-polyglot'
 
+" fuzzy finder
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" Comment
+Plugin 'tpope/vim-commentary'
+
 " Themes
-Plugin 'sickill/vim-monokai'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'phanviet/vim-monokai-pro'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,8 +112,8 @@ let python_highlight_all=1
 
 " start theme config
 set termguicolors
-colorscheme gruvbox
-" colorscheme monokai
+" colorscheme gruvbox
+colorscheme monokai_pro
 " colorscheme ayu
 let g:airline_theme='deus'
 " let g:molokai_original = 1
@@ -230,7 +236,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Gruvbox config
 let g:gruvbox_italic = 1
