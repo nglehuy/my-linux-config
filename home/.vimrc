@@ -1,54 +1,18 @@
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'                  " line on top and bottom
-
-Plug 'vim-airline/vim-airline-themes'           " theme of the top and bottom lines
-
-Plug 'mattn/emmet-vim'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'w0rp/ale'
-
-Plug 'sbdchd/neoformat'
-
-Plug 'neomake/neomake'
-
-Plug 'morhetz/gruvbox'
-
-Plug 'ayu-theme/ayu-vim'
-
-Plug 'sheerun/vim-polyglot'                     " syntax++
-
-Plug 'chrisbra/csv.vim'                         " csv
-
-Plug 'prettier/vim-prettier', { 'do': 'yarn' }      " js, ts autoformat
-
-Plug 'vim-scripts/indentpython.vim'
-
-Plug 'mhinz/vim-signify'
-
-Plug 'jiangmiao/auto-pairs'                     " auto closed brackets
-
-Plug 'yuttie/comfortable-motion.vim'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn'  }
-
-Plug 'kana/vim-operator-user'
-
-Plug 'rhysd/vim-operator-surround'
-
-Plug 'cocopon/vaffle.vim'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-call plug#end()
+" call plug#begin('~/.vim/plugged')
+" 
+" " Plug 'mattn/emmet-vim'
+" 
+" " Plug 'w0rp/ale'
+" 
+" " if has('nvim')
+" "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" " else
+" "   Plug 'Shougo/deoplete.nvim'
+" "   Plug 'roxma/nvim-yarp'
+" "   Plug 'roxma/vim-hug-neovim-rpc'
+" " endif
+" 
+" call plug#end()
 
 " Vundle
 set nocompatible              " be iMproved, required
@@ -56,9 +20,19 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/plugged/vundle')
+call vundle#begin('~/.vim/vundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Brings physics-based smooth scrolling to the Vim/Neovim world!
+Plugin 'yuttie/comfortable-motion.vim'
+
+" Insert or delete brackets, parens, quotes in pair.
+Plugin 'jiangmiao/auto-pairs'
+
+" Show difference in code by using a sign column
+Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
 
 " For indentation
 Plugin 'Yggdroot/indentLine'
@@ -72,8 +46,8 @@ Plugin 'rhysd/vim-clang-format'
 " Vim auto closed tag
 Plugin 'alvan/vim-closetag'
 
-" NerdTree
-"Plugin 'scrooloose/nerdtree'
+" Vaffle
+Plugin 'cocopon/vaffle.vim'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -82,7 +56,32 @@ Plugin 'plasticboy/vim-markdown'
 " Python indent
 Plugin 'Vimjas/vim-python-pep8-indent'
 
-"All of your Plugins must be added before the following line
+" COC 
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+" OPERATOR TO SURROUND A TEXT OBJECT
+Plugin 'kana/vim-operator-user'
+Plugin 'rhysd/vim-operator-surround'
+
+" MARKDOWN PREVIEW FOR (NEO)VIM
+Plugin 'iamcco/markdown-preview.nvim'
+
+" Prettier formatter for javascript
+Plugin 'prettier/vim-prettier'
+
+" Csv file
+Plugin 'chrisbra/csv.vim'
+
+" Syntax++
+Plugin 'sheerun/vim-polyglot'
+
+" Themes
+Plugin 'sickill/vim-monokai'
+Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -102,18 +101,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#ale#enabled = 1
-let ayucolor="mirage"
 let python_highlight_all=1
 " end nvim/vim config
 
 " start theme config
 set termguicolors
-" color dracula
-" color lucario
-" color nord
-color gruvbox
-" color PaperColor
-" color molokai
+colorscheme gruvbox
+" colorscheme monokai
 " colorscheme ayu
 let g:airline_theme='deus'
 " let g:molokai_original = 1
@@ -278,7 +272,7 @@ set nowrap
 " rofi
 au BufNewFile,BufRead /*.rasi setf css
 
-set shell=/bin/sh
+set shell=/usr/bin/zsh
 
 " operator mappings
 map <silent>sa <Plug>(operator-surround-append)
@@ -293,7 +287,16 @@ function! OpenVaffle() abort
     call vaffle#init(expand('%:p'))
   endif
 endfunction
-nnoremap <leader>dd :call OpenVaffle()<CR>
+nnoremap <leader>v :call OpenVaffle()<CR>
 let g:vaffle_show_hidden_files = 1
 map sh <Plug>(vaffle-open-selected-split)
 map sv <Plug>(vaffle-open-selected-vsplit)
+
+" Coc nvim
+set hidden
+set nobackup
+set nowritebackup
+" Give more space for displaying messages.
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
