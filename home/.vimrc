@@ -53,11 +53,11 @@ Plugin 'cocopon/vaffle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" Python indent
-Plugin 'Vimjas/vim-python-pep8-indent'
-
 " COC 
 Plugin 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
+
+" Python formatter
+Plugin 'tell-k/vim-autopep8'
 
 " OPERATOR TO SURROUND A TEXT OBJECT
 Plugin 'kana/vim-operator-user'
@@ -176,8 +176,11 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " autopep8
+let g:autopep8_max_line_length=89
+let g:autopep8_disable_show_diff=1
+let g:autopep8_on_save=1
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=89 expandtab fileformat=unix
 map <C-i> :Autopep8<CR>
 set encoding=utf-8
 
