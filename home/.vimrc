@@ -306,3 +306,6 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
+
+" Switch to opened buffer position, including tab
+set switchbuf=usetab
