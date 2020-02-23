@@ -141,7 +141,6 @@ autocmd VimEnter * nested call LoadSession()
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | q | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | call OpenVaffle() | endif
 " end NERDTree config
 
 " save session
@@ -149,10 +148,15 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd VimLeave * if getcwd() != $HOME && getcwd() != $HOME.'/.config/nvim/' | mksession! .session.vim | endif
 
 " load session
+" open vaffle only no .session.vim file 
 function! LoadSession()
     if getcwd() != $HOME.'/.config/nvim/' && getcwd() != $HOME && filereadable(".session.vim")
       " source local project Session.vim
       source .session.vim
+    else
+        if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+            call OpenVaffle()
+        endif
     endif
 endfunction
 
