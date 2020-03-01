@@ -24,6 +24,9 @@ call vundle#begin('~/.vim/vundle')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Ale
+Plugin 'dense-analysis/ale'
+
 " Brings physics-based smooth scrolling to the Vim/Neovim world!
 Plugin 'yuttie/comfortable-motion.vim'
 
@@ -216,16 +219,20 @@ EOF
 endif
 
 " start ALE config
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
+let g:ale_sign_error = 'er'
+let g:ale_sign_warning = 'wn'
+let g:ale_lint_on_save=1
+let g:ale_lint_on_text_changed=0
 let g:ale_python_pylint_change_directory=0
-let g:ale_python_flake8_change_directory=0
-let g:ale_list_window_size = 2
+let g:ale_python_pylint_use_global=1
+let g:ale_python_pylint_auto_pipenv=1
+let g:ale_list_window_size=1
 let g:ale_linters = {
-\   'python': ['flake8', 'pylint'],
+\   'python': ['pylint'],
 \   'javascript': ['eslint'],
 \   'vue': ['eslint']
 \}
+let g:airline#extensions#ale#enabled=1
 " end ALE config
 
 :set listchars=tab:\|\ 
@@ -259,9 +266,6 @@ let g:prettier#config#single_quote = 'false'
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-"HMe pylint
-let g:ale_python_pylint_change_directory=0
 
 "auto closed tag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
