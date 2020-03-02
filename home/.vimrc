@@ -115,8 +115,8 @@ let python_highlight_all=1
 
 " start theme config
 set termguicolors
-" colorscheme gruvbox
-colorscheme monokai_pro
+colorscheme gruvbox
+" colorscheme monokai_pro
 " colorscheme ayu
 let g:airline_theme='deus'
 " let g:molokai_original = 1
@@ -250,7 +250,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-" hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 
 " Gruvbox config
