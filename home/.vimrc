@@ -166,8 +166,8 @@ endfunction
 set sessionoptions-=options  " Don't save options
 
 " set default indentation
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set laststatus=2
 set splitright
@@ -186,6 +186,7 @@ nnoremap <C-H> <C-W><C-H>
 let g:autopep8_max_line_length=89
 let g:autopep8_disable_show_diff=1
 let g:autopep8_on_save=1
+let g:autopep8_indent_size=2
 au BufNewFile,BufRead *.py
     \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=89 expandtab fileformat=unix
 map <C-i> :Autopep8<CR>
