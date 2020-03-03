@@ -183,12 +183,12 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " autopep8
-let g:autopep8_max_line_length=89
+let g:autopep8_max_line_length=79
 let g:autopep8_disable_show_diff=1
 let g:autopep8_on_save=1
 let g:autopep8_indent_size=2
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=89 expandtab fileformat=unix
+    \ set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab fileformat=unix
 map <C-i> :Autopep8<CR>
 set encoding=utf-8
 
