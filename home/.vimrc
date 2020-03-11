@@ -89,6 +89,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'phanviet/vim-monokai-pro'
+Plugin 'joshdick/onedark.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,6 +98,9 @@ filetype plugin indent on    " required
 " deoplete
 let g:deoplete#enable_at_startup = 1
 " call deoplete#custom#option('ignore_sources': { 'py' })
+
+" onedark
+let g:onedark_terminal_italics = 1
 
 " start nvim/vim config
 set relativenumber
@@ -115,10 +119,11 @@ let python_highlight_all=1
 
 " start theme config
 set termguicolors
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme onedark
 " colorscheme monokai_pro
 " colorscheme ayu
-let g:airline_theme='deus'
+let g:airline_theme='onedark'
 " let g:molokai_original = 1
 " end theme config
 
@@ -167,11 +172,14 @@ set sessionoptions-=options  " Don't save options
 
 " set default indentation
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set laststatus=2
 set splitright
 set splitbelow
+set textwidth=79
+set fileformat=unix
 
 " for javascript
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -187,9 +195,9 @@ let g:autopep8_max_line_length=79
 let g:autopep8_disable_show_diff=1
 let g:autopep8_on_save=1
 let g:autopep8_indent_size=2
-au BufNewFile,BufRead *.py
-    \ set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab fileformat=unix
-map <C-i> :Autopep8<CR>
+let g:autopep8_ignore="E501,W293,E226,E24,W6,E121"
+autocmd FileType python set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=79 expandtab fileformat=unix
+autocmd FileType python noremap <buffer> <C-i> :call Autopep8("--ignore E121")<CR>
 set encoding=utf-8
 
 " start syntastic config
@@ -251,7 +259,7 @@ let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 
 " Background
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 
 " Gruvbox config
