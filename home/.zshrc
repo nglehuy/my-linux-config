@@ -237,3 +237,6 @@ prompt spaceship
 export TERM=xterm-256color
 # yarn
 export PATH="$PATH:`yarn global bin`"
+
+# vim
+bindkey -v
